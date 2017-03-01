@@ -1,0 +1,17 @@
+F:\VS_online\Owl\TooExe.Owl.Library\bin\Debug\netcoreapp1.1\Microsoft.DiaSymReader.Native.x86.dll
+F:\VS_online\Owl\TooExe.Owl.Library\bin\Debug\netcoreapp1.1\Microsoft.DiaSymReader.Native.amd64.dll
+F:\VS_online\Owl\TooExe.Owl.Library\bin\Debug\netcoreapp1.1\TooExe.Owl.Library.deps.json
+F:\VS_online\Owl\TooExe.Owl.Library\bin\Debug\netcoreapp1.1\TooExe.Owl.Library.dll
+F:\VS_online\Owl\TooExe.Owl.Library\bin\Debug\netcoreapp1.1\TooExe.Owl.Library.pdb
+F:\VS_online\Owl\TooExe.Owl.Library\obj\Debug\netcoreapp1.1\TooExe.Owl.Library.AssemblyInfo.cs
+F:\VS_online\Owl\TooExe.Owl.Library\obj\Debug\netcoreapp1.1\TooExe.Owl.Library.dll
+F:\VS_online\Owl\TooExe.Owl.Library\obj\Debug\netcoreapp1.1\TooExe.Owl.Library.pdb
+F:\VS_online\Konkurs\OWL\TooExe.Owl.Library\bin\Debug\netcoreapp1.1\Microsoft.DiaSymReader.Native.x86.dll
+F:\VS_online\Konkurs\OWL\TooExe.Owl.Library\bin\Debug\netcoreapp1.1\Microsoft.DiaSymReader.Native.amd64.dll
+F:\VS_online\Konkurs\OWL\TooExe.Owl.Library\bin\Debug\netcoreapp1.1\TooExe.Owl.Library.deps.json
+F:\VS_online\Konkurs\OWL\TooExe.Owl.Library\bin\Debug\netcoreapp1.1\TooExe.Owl.Library.dll
+F:\VS_online\Konkurs\OWL\TooExe.Owl.Library\bin\Debug\netcoreapp1.1\TooExe.Owl.Library.pdb
+F:\VS_online\Konkurs\OWL\TooExe.Owl.Library\obj\Debug\netcoreapp1.1\TooExe.Owl.Library.csprojResolveAssemblyReference.cache
+F:\VS_online\Konkurs\OWL\TooExe.Owl.Library\obj\Debug\netcoreapp1.1\TooExe.Owl.Library.AssemblyInfo.cs
+F:\VS_online\Konkurs\OWL\TooExe.Owl.Library\obj\Debug\netcoreapp1.1\TooExe.Owl.Library.dll
+F:\VS_online\Konkurs\OWL\TooExe.Owl.Library\obj\Debug\netcoreapp1.1\TooExe.Owl.Library.pdb

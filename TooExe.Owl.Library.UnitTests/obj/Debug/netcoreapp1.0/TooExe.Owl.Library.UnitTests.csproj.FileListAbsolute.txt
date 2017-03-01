@@ -1,0 +1,14 @@
+F:\VS_online\Owl\TooExe.Owl.Library.UnitTests\bin\Debug\netcoreapp1.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+F:\VS_online\Owl\TooExe.Owl.Library.UnitTests\bin\Debug\netcoreapp1.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+F:\VS_online\Owl\TooExe.Owl.Library.UnitTests\bin\Debug\netcoreapp1.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+F:\VS_online\Owl\TooExe.Owl.Library.UnitTests\bin\Debug\netcoreapp1.0\TooExe.Owl.Library.UnitTests.deps.json
+F:\VS_online\Owl\TooExe.Owl.Library.UnitTests\bin\Debug\netcoreapp1.0\TooExe.Owl.Library.UnitTests.runtimeconfig.json
+F:\VS_online\Owl\TooExe.Owl.Library.UnitTests\bin\Debug\netcoreapp1.0\TooExe.Owl.Library.UnitTests.runtimeconfig.dev.json
+F:\VS_online\Owl\TooExe.Owl.Library.UnitTests\bin\Debug\netcoreapp1.0\TooExe.Owl.Library.UnitTests.dll
+F:\VS_online\Owl\TooExe.Owl.Library.UnitTests\bin\Debug\netcoreapp1.0\TooExe.Owl.Library.UnitTests.pdb
+F:\VS_online\Owl\TooExe.Owl.Library.UnitTests\bin\Debug\netcoreapp1.0\TooExe.Owl.Library.dll
+F:\VS_online\Owl\TooExe.Owl.Library.UnitTests\bin\Debug\netcoreapp1.0\TooExe.Owl.Library.pdb
+F:\VS_online\Owl\TooExe.Owl.Library.UnitTests\obj\Debug\netcoreapp1.0\TooExe.Owl.Library.UnitTests.csprojResolveAssemblyReference.cache
+F:\VS_online\Owl\TooExe.Owl.Library.UnitTests\obj\Debug\netcoreapp1.0\TooExe.Owl.Library.UnitTests.AssemblyInfo.cs
+F:\VS_online\Owl\TooExe.Owl.Library.UnitTests\obj\Debug\netcoreapp1.0\TooExe.Owl.Library.UnitTests.dll
+F:\VS_online\Owl\TooExe.Owl.Library.UnitTests\obj\Debug\netcoreapp1.0\TooExe.Owl.Library.UnitTests.pdb
