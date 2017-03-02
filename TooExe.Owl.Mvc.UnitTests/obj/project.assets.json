@@ -16739,14 +16739,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Marcin\\.nuget\\packages\\": {}
+    "C:\\Users\\kotecki.marcin\\.nuget\\packages\\": {}
   },
   "project": {
+    "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\VS_online\\Konkurs\\OWL\\TooExe.Owl.Mvc.UnitTests\\TooExe.Owl.Mvc.UnitTests.csproj",
+      "projectUniqueName": "C:\\_repo\\OWL\\TooExe.Owl.Mvc.UnitTests\\TooExe.Owl.Mvc.UnitTests.csproj",
       "projectName": "TooExe.Owl.Mvc.UnitTests",
-      "projectPath": "F:\\VS_online\\Konkurs\\OWL\\TooExe.Owl.Mvc.UnitTests\\TooExe.Owl.Mvc.UnitTests.csproj",
-      "outputPath": "F:\\VS_online\\Konkurs\\OWL\\TooExe.Owl.Mvc.UnitTests\\obj\\",
+      "projectPath": "C:\\_repo\\OWL\\TooExe.Owl.Mvc.UnitTests\\TooExe.Owl.Mvc.UnitTests.csproj",
+      "outputPath": "C:\\_repo\\OWL\\TooExe.Owl.Mvc.UnitTests\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
@@ -16770,7 +16771,8 @@
           },
           "Microsoft.NETCore.App": {
             "target": "Package",
-            "version": "1.1.0"
+            "version": "1.1.0",
+            "autoReferenced": true
           },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
