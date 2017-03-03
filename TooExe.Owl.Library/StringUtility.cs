@@ -7,38 +7,46 @@ namespace TooExe.Owl.Library
 {
     public static class StringUtility
     {
-        public static IEnumerable<string> ToWordList(this string text, char[] charsCharacter  )
+        public static IEnumerable<string> ToWordList(this string text  )
         {
             var endOfWord = ' ';
             var chars = text.ToCharArray();
             var result = new List<string>();
             var sb = new StringBuilder();
+            string word=String.Empty;
 
             foreach (var c in chars)
             {
                 if (c == endOfWord)
                 {
-                    if ((sb.Length > 0))
+                    if ((!sb.ToString().IsBadWord()) &&(sb.Length > 0))
                     {
-                        result.Add(sb.ToString());
+                        word = sb.ToString();
+                        word = word.RemoveLastCharByLists();
+                        word = word.ReplcaceRegularVerbForm();
+                        //TODO Example Paris - in this version 
+                        word = word.ToLower();
+                        result.Add(word);
                         sb.Clear();
                     }
                     sb.Clear();
                     continue;
                 }
 
-                foreach (var item in )
-                {
-
-                }
+               
                     sb.Append(c);
-                
 
             }
             //if last sight isn't space
-            if ((!sb.ToString().IsCorrectWord()) && (sb.Length > 0))
+            if ((!sb.ToString().IsBadWord()) && (sb.Length > 0))
             {
-                result.Add(sb.ToString());
+                word = sb.ToString();
+                word = word.RemoveLastCharByLists();
+                word = word.ReplcaceRegularVerbForm();
+                //TODO Example Paris - in this version 
+                word = word.ToLower();
+
+                result.Add(word);
                 sb.Clear();
             }
             return result;
@@ -46,33 +54,53 @@ namespace TooExe.Owl.Library
         }
         
         //http://stackoverflow.com/questions/1390749/check-if-a-string-contains-one-of-10-characters
-        public static bool IsCorrectWord(this string text)
+        public static bool IsBadWord(this string text)
         {
-            var match = text.IsContainUnneceseryCharacter();
-            if (match == false)
+            var result = text.IsContainUnneceseryCharacter();
+            if (result == false)
             {
-                match = text.HaveTwoOrMoreUpperCaseLetter();
+                result = text.HaveTwoOrMoreUpperCaseLetter();
             }
-            return match;
+            return result;
         }
 
-        public static bool IsCharacterDontAdd(this char charCharacter, string unnecessaryCharacters = @".,;:")
+        public static string RemoveLastCharByLists(this string text, string unnecessaryCharacters = "\".,;:'?")
         {
+           
             foreach (var c in unnecessaryCharacters.ToCharArray())
             {
-                if (charCharacter == c)
+                if ((char)text[text.Length-1]==c)
                 {
-                    return true;
+                    text = text.Remove(text.Length - 1);
                 }
             }
-            return false;
+            return text; 
+        }
+        public static string ReplcaceRegularVerbForm(this string text)
+        {
+            
+            char a = (char) text[text.Length - 1];
+            char b = (char) text[text.Length - 2];
+
+            if (((char)text[text.Length-1]=='d')&&((char)text[text.Length - 2] == 'e'))
+            {
+                text = text.Remove(text.Length - 2);
+            }
+
+            return text;
         }
 
-        public static bool IsContainUnneceseryCharacter(this string text, string charsCharacter = @"0123456789!@#$%^&*(){}[]'/")
+        
+        public static bool IsContainUnneceseryCharacter(this string text, string charsCharacter = @"~`1234567890!@#$%^&*()_=+{[}]\|<>/")
         {
-            var match = text.IndexOfAny(charsCharacter.ToCharArray()) != -1;
-
-            return match;
+            var result = text.IndexOfAny(charsCharacter.ToCharArray()) != -1;
+            if ((result==false)&&(text.Length>1))
+            {
+                text = text.Remove(text.Length - 1);
+                result = text.IndexOfAny("\".,;:'?".ToCharArray()) != -1;
+            }
+            
+            return result;
         }
 
         public static bool HaveTwoOrMoreUpperCaseLetter(this string text)

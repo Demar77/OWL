@@ -1,34 +1,27 @@
 using System;
 using System.Collections.Generic;
+using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TooExe.Owl.Library.UnitTests
 {
     [TestClass]
-    public class UnitTest1
+    public class TestStringUtility
     {
         //[TestInitialize] and [TestCleanup] at the individual test level, [ClassInitialize] and [ClassCleanup] at the class level.
-
-        string input = string.Empty;
-
-
         [TestInitialize()]
-        public void Initialize()
-        {
-            string path = @"d:\test.txt";
-            input = System.IO.File.ReadAllText(path);
-        }
+        public void Initialize(){}
 
         [TestCleanup()]
         public void Cleanup() { }
 
         [TestMethod]
-        [DataRow(@"This is  my example")]
-
+        [DataRow(@"This is  my example finished")]
+        [DataRow(@"This 12312 @$FWF WEsdfgsdfs is;  my, example asdfasdas.sdf Finished")]
         public void ToWordList_DirtyString_FourExpectedWord(string input)
         {
             // Arrange all necessary preconditions and inputs.
-            var expected = new List<string> { "This", "is", "my", "example" };
+            var expected = new List<string> { "this", "is", "my", "example", "finish" };
 
             // Act on the object or method under test.
             var actual = input.ToWordList() as List<string>;
@@ -86,38 +79,26 @@ namespace TooExe.Owl.Library.UnitTests
         }
 
         [TestMethod]
-        [DataRow('.')]
-        [DataRow(',')]
-        [DataRow(';')]
-        [DataRow(':')]
-        public void IsCharacterDontAdd_ExpectedChar_True(char input)
+        [DataRow("Forest\"")]
+        [DataRow("Forest.")]
+        [DataRow("Forest,")]
+        [DataRow("Forest;")]
+        [DataRow("Forest:")]
+        [DataRow("Forest'")]
+        [DataRow("Forest?")]
+        public void RemoveLastCharByLists_ExpectedCharToEndString_RemoveLastChar(string input)
         {
             // Arrange all necessary preconditions and inputs.
-            var expected = true;
+            var expected = "Forest";
+           
 
             // Act on the object or method under test.
-            var actual = input.IsCharacterDontAdd();
+            string actual = input.RemoveLastCharByLists();
 
             // Assert that the expected results have occurred.
             Assert.AreEqual(expected, actual);
         }
-
-        [TestMethod]
-        [DataRow('j')]
-        [DataRow('-')]
-        [DataRow('3')]
-        [DataRow('&')]
-        public void IsCharacterDontAdd_ExpectedChar_False(char input)
-        {
-            // Arrange all necessary preconditions and inputs.
-            var expected = false;
-
-            // Act on the object or method under test.
-            var actual = input.IsCharacterDontAdd();
-
-            // Assert that the expected results have occurred.
-            Assert.AreEqual(expected, actual);
-        }
+        
 
         [TestMethod]
         [DataRow(@"12312312312")]
@@ -133,6 +114,25 @@ namespace TooExe.Owl.Library.UnitTests
             Assert.AreEqual(expected, actual);
         }
 
-       
+        [TestMethod]
+        [DataRow(@"12312312312")]
+        [DataRow(@"ReD")]
+        [DataRow(@"Forest/")]
+        [DataRow(@"Forest.House")]
+        [DataRow(@"Forest.house")]
+        [DataRow(@"Forest?house")]
+        [DataRow(@"Forest,house")]
+        public void IsBadWord_InsertBadWord_True(string input)
+        {
+            // Arrange all necessary preconditions and inputs.
+            var expected = true;
+
+            // Act on the object or method under test.
+            var actual = input.IsBadWord();
+
+            // Assert that the expected results have occurred.
+            Assert.AreEqual(expected, actual);
+        }
+
     }
 }
