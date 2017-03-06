@@ -16773,15 +16773,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Marcin\\.nuget\\packages\\": {}
+    "C:\\Users\\kotecki.marcin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\VS_online\\OWL\\TooExe.Owl.Library.UnitTests\\TooExe.Owl.Library.UnitTests.csproj",
+      "projectUniqueName": "C:\\_repo\\OWL\\TooExe.Owl.Library.UnitTests\\TooExe.Owl.Library.UnitTests.csproj",
       "projectName": "TooExe.Owl.Library.UnitTests",
-      "projectPath": "F:\\VS_online\\OWL\\TooExe.Owl.Library.UnitTests\\TooExe.Owl.Library.UnitTests.csproj",
-      "outputPath": "F:\\VS_online\\OWL\\TooExe.Owl.Library.UnitTests\\obj\\",
+      "projectPath": "C:\\_repo\\OWL\\TooExe.Owl.Library.UnitTests\\TooExe.Owl.Library.UnitTests.csproj",
+      "outputPath": "C:\\_repo\\OWL\\TooExe.Owl.Library.UnitTests\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
@@ -16789,8 +16789,8 @@
       "frameworks": {
         "netcoreapp1.1": {
           "projectReferences": {
-            "F:\\VS_online\\OWL\\TooExe.Owl.Library\\TooExe.Owl.Library.csproj": {
-              "projectPath": "F:\\VS_online\\OWL\\TooExe.Owl.Library\\TooExe.Owl.Library.csproj"
+            "C:\\_repo\\OWL\\TooExe.Owl.Library\\TooExe.Owl.Library.csproj": {
+              "projectPath": "C:\\_repo\\OWL\\TooExe.Owl.Library\\TooExe.Owl.Library.csproj"
             }
           }
         }

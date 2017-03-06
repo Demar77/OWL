@@ -39,4 +39,3 @@ C:\_repo\OWL\TooExe.Owl.Mvc.UnitTests\bin\Debug\netcoreapp1.1\TooExe.Owl.Mvc.Uni
 C:\_repo\OWL\TooExe.Owl.Mvc.UnitTests\obj\Debug\netcoreapp1.1\TooExe.Owl.Mvc.UnitTests.AssemblyInfo.cs
 C:\_repo\OWL\TooExe.Owl.Mvc.UnitTests\obj\Debug\netcoreapp1.1\TooExe.Owl.Mvc.UnitTests.dll
 C:\_repo\OWL\TooExe.Owl.Mvc.UnitTests\obj\Debug\netcoreapp1.1\TooExe.Owl.Mvc.UnitTests.pdb
-C:\_repo\OWL\TooExe.Owl.Mvc.UnitTests\obj\Debug\netcoreapp1.1\TooExe.Owl.Mvc.UnitTests.csprojResolveAssemblyReference.cache

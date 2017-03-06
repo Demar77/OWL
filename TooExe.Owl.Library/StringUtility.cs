@@ -7,7 +7,7 @@ namespace TooExe.Owl.Library
 {
     public static class StringUtility
     {
-        public static IEnumerable<string> ToWordList(this string text  )
+        public static IEnumerable<string> ToWordList(this string text )
         {
             var endOfWord = ' ';
             var chars = text.ToCharArray();
@@ -24,6 +24,7 @@ namespace TooExe.Owl.Library
                         word = sb.ToString();
                         word = word.RemoveLastCharByLists();
                         word = word.ReplcaceRegularVerbForm();
+                       // word = word.ReplcaceIrregularVerbForm();
                         //TODO Example Paris - in this version 
                         word = word.ToLower();
                         result.Add(word);
@@ -89,9 +90,10 @@ namespace TooExe.Owl.Library
 
             return text;
         }
-        public static string ReplcaceInRegularVerbForm(this string text)
+        public static string ReplcaceIrregularVerbForm(this string text, List<IrregularVerbForms> listIrregularVerbForms )
         {
-            throw new Exception("Not implemented");
+           //Read list from file
+
            
 
             return text;
@@ -129,4 +131,6 @@ namespace TooExe.Owl.Library
         }
 
     }
+
+   
 }
