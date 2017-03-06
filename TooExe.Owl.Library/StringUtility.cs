@@ -89,8 +89,14 @@ namespace TooExe.Owl.Library
 
             return text;
         }
+        public static string ReplcaceInRegularVerbForm(this string text)
+        {
+            throw new Exception("Not implemented");
+           
 
-        
+            return text;
+        }
+
         public static bool IsContainUnneceseryCharacter(this string text, string charsCharacter = @"~`1234567890!@#$%^&*()_=+{[}]\|<>/")
         {
             var result = text.IndexOfAny(charsCharacter.ToCharArray()) != -1;

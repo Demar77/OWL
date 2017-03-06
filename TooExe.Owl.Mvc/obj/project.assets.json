@@ -24325,15 +24325,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kotecki.marcin\\.nuget\\packages\\": {}
+    "C:\\Users\\Marcin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\_repo\\OWL\\TooExe.Owl.Mvc\\TooExe.Owl.Mvc.csproj",
+      "projectUniqueName": "F:\\VS_online\\OWL\\TooExe.Owl.Mvc\\TooExe.Owl.Mvc.csproj",
       "projectName": "TooExe.Owl.Mvc",
-      "projectPath": "C:\\_repo\\OWL\\TooExe.Owl.Mvc\\TooExe.Owl.Mvc.csproj",
-      "outputPath": "C:\\_repo\\OWL\\TooExe.Owl.Mvc\\obj\\",
+      "projectPath": "F:\\VS_online\\OWL\\TooExe.Owl.Mvc\\TooExe.Owl.Mvc.csproj",
+      "outputPath": "F:\\VS_online\\OWL\\TooExe.Owl.Mvc\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"

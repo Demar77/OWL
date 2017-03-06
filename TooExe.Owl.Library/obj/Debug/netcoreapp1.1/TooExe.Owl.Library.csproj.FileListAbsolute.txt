@@ -24,3 +24,4 @@ C:\_repo\OWL\TooExe.Owl.Library\obj\Debug\netcoreapp1.1\TooExe.Owl.Library.Assem
 C:\_repo\OWL\TooExe.Owl.Library\obj\Debug\netcoreapp1.1\TooExe.Owl.Library.dll
 C:\_repo\OWL\TooExe.Owl.Library\obj\Debug\netcoreapp1.1\TooExe.Owl.Library.pdb
 C:\_repo\OWL\TooExe.Owl.Library\obj\Debug\netcoreapp1.1\TooExe.Owl.Library.csprojResolveAssemblyReference.cache
+F:\VS_online\OWL\TooExe.Owl.Library\obj\Debug\netcoreapp1.1\TooExe.Owl.Library.csprojResolveAssemblyReference.cache
