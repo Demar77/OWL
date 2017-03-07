@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 
 namespace TooExe.Owl.Library
 {
- public   class ReadWordsFromFile
+    public class ReadWordsFromFile
     {
         public List<IrregularVerbForms> GetIrregularVerbForms(string path)
         {
@@ -30,14 +30,11 @@ namespace TooExe.Owl.Library
 
                         result.Add(tmpIrregularVerbForms);
                     }
-
-
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine("The file could not be read:");
-             
             }
             return result;
         }
@@ -46,7 +43,6 @@ namespace TooExe.Owl.Library
         {
             string result = String.Empty;
 
-           
             try
             {   // Open the text file using a stream reader.
                 var fileStream = new FileStream(@path, FileMode.Open, FileAccess.Read);
@@ -54,19 +50,13 @@ namespace TooExe.Owl.Library
                 {
                     // Read the stream to a string, and write the string to the console.
                     result = Regex.Replace(sr.ReadToEnd(), @"\t|\n|\r", " ");
-                    
-                    
-
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine("The file could not be read:");
-              
             }
             return result;
         }
-
     }
 }
-

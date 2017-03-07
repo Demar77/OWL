@@ -10,7 +10,7 @@ namespace TooExe.Owl.Library.UnitTests
     {
         //[TestInitialize] and [TestCleanup] at the individual test level, [ClassInitialize] and [ClassCleanup] at the class level.
         [TestInitialize()]
-        public void Initialize(){}
+        public void Initialize() { }
 
         [TestCleanup()]
         public void Cleanup() { }
@@ -33,7 +33,6 @@ namespace TooExe.Owl.Library.UnitTests
             {
                 Assert.AreEqual(expected[i], actual[i]);
             }
-
         }
 
         [TestMethod]
@@ -70,7 +69,6 @@ namespace TooExe.Owl.Library.UnitTests
             // Arrange all necessary preconditions and inputs.
             var expected = true;
 
-
             // Act on the object or method under test.
             var actual = input.HaveTwoOrMoreUpperCaseLetter();
 
@@ -90,7 +88,6 @@ namespace TooExe.Owl.Library.UnitTests
         {
             // Arrange all necessary preconditions and inputs.
             var expected = "Forest";
-           
 
             // Act on the object or method under test.
             string actual = input.RemoveLastCharByLists();
@@ -98,7 +95,6 @@ namespace TooExe.Owl.Library.UnitTests
             // Assert that the expected results have occurred.
             Assert.AreEqual(expected, actual);
         }
-        
 
         [TestMethod]
         [DataRow(@"12312312312")]
@@ -106,7 +102,7 @@ namespace TooExe.Owl.Library.UnitTests
         {
             // Arrange all necessary preconditions and inputs.
             var expected = true;
-            
+
             // Act on the object or method under test.
             var actual = input.IsContainUnneceseryCharacter();
 
@@ -133,6 +129,5 @@ namespace TooExe.Owl.Library.UnitTests
             // Assert that the expected results have occurred.
             Assert.AreEqual(expected, actual);
         }
-
     }
 }

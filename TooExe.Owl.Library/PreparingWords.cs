@@ -18,11 +18,8 @@ namespace TooExe.Owl.Library
 
         public void CalculateFreguency()
         {
-
             foreach (var word in _listWord)
             {
-
-
                 FrequencyWordsList findWord = _listFrequency.FirstOrDefault(x => x.Word == word);
                 if (findWord != null)
                 {
@@ -32,10 +29,7 @@ namespace TooExe.Owl.Library
                 {
                     _listFrequency.Add(new FrequencyWordsList { Word = word, Frequency = 1 });
                 }
-
             }
         }
-
-
     }
 }
