@@ -5,4 +5,12 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeCoverage" Version="1.0.2" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Files\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Files\IrregularVerbForms.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>

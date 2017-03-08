@@ -25,3 +25,4 @@ C:\_repo\OWL\TooExe.Owl.Library\obj\Debug\netcoreapp1.1\TooExe.Owl.Library.dll
 C:\_repo\OWL\TooExe.Owl.Library\obj\Debug\netcoreapp1.1\TooExe.Owl.Library.pdb
 F:\VS_online\OWL\TooExe.Owl.Library\obj\Debug\netcoreapp1.1\TooExe.Owl.Library.csprojResolveAssemblyReference.cache
 C:\_repo\OWL\TooExe.Owl.Library\obj\Debug\netcoreapp1.1\TooExe.Owl.Library.csprojResolveAssemblyReference.cache
+C:\_repo\OWL\TooExe.Owl.Library\bin\Debug\netcoreapp1.1\Files\IrregularVerbForms.txt

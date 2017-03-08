@@ -128,5 +128,24 @@ namespace TooExe.Owl.Library.UnitTests
             // Assert that the expected results have occurred.
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        [DataRow("bend","bend")]
+        [DataRow("bent", "bend")]
+        [DataRow("bit", "bite")]
+        [DataRow("bitten", "bite")]
+        [DataRow("bitten", "bite")]
+        public void ReplcaceIrregularVerbForm_ExpectedIrregularVerb_ReplaceToFirstForm(string input, string expected)
+        {
+           
+            // Arrange all necessary preconditions and inputs.
+           
+
+            // Act on the object or method under test.
+            string actual = input.ReplcaceIrregularVerbForm();
+
+            // Assert that the expected results have occurred.
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

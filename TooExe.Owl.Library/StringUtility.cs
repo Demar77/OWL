@@ -5,6 +5,14 @@ namespace TooExe.Owl.Library
 {
     public static class StringUtility
     {
+        public static List<IrregularVerbForms> ListIrregularVerbForms { get; }
+
+         static StringUtility()
+         {
+            var rootPath = System.AppContext.BaseDirectory;
+            string path = rootPath + @"/Files/IrregularVerbForms.txt"; ;
+             ListIrregularVerbForms = new ReadWordsFromFile(). GetIrregularVerbForms(path);
+         }
         public static IEnumerable<string> ToWordList(this string text )
         {
             var endOfWord = ' ';
@@ -85,11 +93,15 @@ namespace TooExe.Owl.Library
             return text;
         }
 
-        public static string ReplcaceIrregularVerbForm(this string text, List<IrregularVerbForms> listIrregularVerbForms )
+        public static string ReplcaceIrregularVerbForm(this string text )
         {
-           //TODO Read list from file
-
-           
+            foreach (var verb in ListIrregularVerbForms)
+            {
+                if ((text == verb.FirstForm) || (text==verb.SecondForm)||(text==verb.ThirdForm))
+                {
+                    return verb.FirstForm;
+                }
+            }
 
             return text;
         }
