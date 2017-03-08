@@ -18,7 +18,7 @@ namespace TooExe.Owl.Library.UnitTests.IntegrationTests
         {
             // Arrange all necessary preconditions and inputs.
             var expected = new List<string> { "this", "is", "my", "test", "this", "is", "my", "first", "word", "finish", "finish" };
-           var rootPath = System.AppContext.BaseDirectory;
+            var rootPath = System.AppContext.BaseDirectory;
             string inputPath = rootPath + @"/TestFiles/SmallPartOfBookToTest.txt";
             var input = new ReadWordsFromFile().GetStringFromFile(inputPath);
 
@@ -60,7 +60,6 @@ namespace TooExe.Owl.Library.UnitTests.IntegrationTests
                 new FrequencyWordsList {Word = "word", Frequency = 1},
                 new FrequencyWordsList {Word = "finish", Frequency = 2}
             };
-
 
             // Act on the object or method under test.
             var preparingWords = new PreparingWords(listWord, listFrequency);

@@ -1,33 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace TooExe.Owl.Library
 {
     public class PreparingWords : IPreparingWords
     {
-        private List<string> _listWord = new List<string>();
-        public List<FrequencyWordsList> _listFrequency = new List<FrequencyWordsList>();
+        private readonly List<string> _listWord;
+        public List<FrequencyWordsList> ListFrequency;
 
         public PreparingWords(List<string> listWord, List<FrequencyWordsList> listFrequency)
         {
             _listWord = listWord;
-            _listFrequency = listFrequency;
+            ListFrequency = listFrequency;
         }
 
         public void CalculateFreguency()
         {
             foreach (var word in _listWord)
             {
-                FrequencyWordsList findWord = _listFrequency.FirstOrDefault(x => x.Word == word);
+                FrequencyWordsList findWord = ListFrequency.FirstOrDefault(x => x.Word == word);
                 if (findWord != null)
                 {
                     findWord.Frequency++;
                 }
                 else
                 {
-                    _listFrequency.Add(new FrequencyWordsList { Word = word, Frequency = 1 });
+                    ListFrequency.Add(new FrequencyWordsList { Word = word, Frequency = 1 });
                 }
             }
         }

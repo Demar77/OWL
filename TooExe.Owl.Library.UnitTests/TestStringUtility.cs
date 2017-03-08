@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TooExe.Owl.Library.UnitTests
@@ -15,22 +13,29 @@ namespace TooExe.Owl.Library.UnitTests
         public void Cleanup() { }
 
         [TestMethod]
-        [DataRow(@"This is  my example finished")]
-        [DataRow(@"This 12312 @$FWF WEsdfgsdfs is;  my, example asdfasdas.sdf Finished")]
-        public void ToWordList_DirtyString_FourExpectedWord(string input)
+        [DataRow(@"This is  my example finished bit")]
+        [DataRow(@"This 12312 @$FWF WEsdfgsdfs is;  my, example asdfasdas.sdf Finished bitten")]
+        public void ToWordList_DirtyString_ExpectedWord(string input)
         {
             // Arrange all necessary preconditions and inputs.
-            var expected = new List<string> { "this", "is", "my", "example", "finish" };
+            var expected = new List<string> { "this", "is", "my", "example", "finish", "bite" };
 
             // Act on the object or method under test.
             var actual = input.ToWordList() as List<string>;
 
             // Assert that the expected results have occurred.
-            Assert.AreEqual(expected.Count, actual.Count);
-
-            for (var i = 0; i < expected.Count; i++)
+            if (actual != null)
             {
-                Assert.AreEqual(expected[i], actual[i]);
+                Assert.AreEqual(expected.Count, actual.Count);
+
+                for (var i = 0; i < expected.Count; i++)
+                {
+                    Assert.AreEqual(expected[i], actual[i]);
+                }
+            }
+            else
+            {
+                Assert.Fail("No string in input.");
             }
         }
 
@@ -52,6 +57,7 @@ namespace TooExe.Owl.Library.UnitTests
             var actual = input.HaveTwoOrMoreUpperCaseLetter();
 
             // Assert that the expected results have occurred.
+            // ReSharper disable once ConditionIsAlwaysTrueOrFalse
             Assert.AreEqual(expected, actual);
         }
 
@@ -72,6 +78,7 @@ namespace TooExe.Owl.Library.UnitTests
             var actual = input.HaveTwoOrMoreUpperCaseLetter();
 
             // Assert that the expected results have occurred.
+            // ReSharper disable once ConditionIsAlwaysTrueOrFalse
             Assert.AreEqual(expected, actual);
         }
 
@@ -106,6 +113,7 @@ namespace TooExe.Owl.Library.UnitTests
             var actual = input.IsContainUnneceseryCharacter();
 
             // Assert that the expected results have occurred.
+            // ReSharper disable once ConditionIsAlwaysTrueOrFalse
             Assert.AreEqual(expected, actual);
         }
 
@@ -126,23 +134,36 @@ namespace TooExe.Owl.Library.UnitTests
             var actual = input.IsBadWord();
 
             // Assert that the expected results have occurred.
+            // ReSharper disable once ConditionIsAlwaysTrueOrFalse
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        [DataRow("bend","bend")]
+        [DataRow("bend", "bend")]
         [DataRow("bent", "bend")]
+        [DataRow("bite", "bite")]
         [DataRow("bit", "bite")]
-        [DataRow("bitten", "bite")]
         [DataRow("bitten", "bite")]
         public void ReplcaceIrregularVerbForm_ExpectedIrregularVerb_ReplaceToFirstForm(string input, string expected)
         {
-           
             // Arrange all necessary preconditions and inputs.
-           
 
             // Act on the object or method under test.
             string actual = input.ReplcaceIrregularVerbForm();
+
+            // Assert that the expected results have occurred.
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void ReplcaceRegularVerbForm_InputReguralVerb_GetFirstFormVerb()
+        {
+            // Arrange all necessary preconditions and inputs.
+            string input = "finished";
+            var expected = "finish";
+
+            // Act on the object or method under test.
+            var actual = input.ReplcaceRegularVerbForm();
 
             // Assert that the expected results have occurred.
             Assert.AreEqual(expected, actual);

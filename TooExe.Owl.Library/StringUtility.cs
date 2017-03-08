@@ -7,13 +7,14 @@ namespace TooExe.Owl.Library
     {
         public static List<IrregularVerbForms> ListIrregularVerbForms { get; }
 
-         static StringUtility()
-         {
+        static StringUtility()
+        {
             var rootPath = System.AppContext.BaseDirectory;
-            string path = rootPath + @"/Files/IrregularVerbForms.txt"; ;
-             ListIrregularVerbForms = new ReadWordsFromFile(). GetIrregularVerbForms(path);
-         }
-        public static IEnumerable<string> ToWordList(this string text )
+            string path = rootPath + @"/Files/IrregularVerbForms.txt";
+            ListIrregularVerbForms = new ReadWordsFromFile().GetIrregularVerbForms(path);
+        }
+
+        public static IEnumerable<string> ToWordList(this string text)
         {
             var endOfWord = ' ';
             var chars = text.ToCharArray();
@@ -25,14 +26,10 @@ namespace TooExe.Owl.Library
             {
                 if (c == endOfWord)
                 {
-                    if ((!sb.ToString().IsBadWord()) &&(sb.Length > 0))
+                    if ((!sb.ToString().IsBadWord()) && (sb.Length > 0))
                     {
-                        word = sb.ToString();
-                        word = word.RemoveLastCharByLists();
-                        word = word.ReplcaceRegularVerbForm();
-                       // word = word.ReplcaceIrregularVerbForm();
-                        //TODO Example Paris - in this version 
-                        word = word.ToLower();
+                        word = sb.ReplaceWordToInfinitive();
+
                         result.Add(word);
                         sb.Clear();
                     }
@@ -40,26 +37,31 @@ namespace TooExe.Owl.Library
                     continue;
                 }
 
-               
-                    sb.Append(c);
-
+                sb.Append(c);
             }
             //if last sight isn't space
             if ((!sb.ToString().IsBadWord()) && (sb.Length > 0))
             {
-                word = sb.ToString();
-                word = word.RemoveLastCharByLists();
-                word = word.ReplcaceRegularVerbForm();
-                //TODO Example Paris - in this version 
-                word = word.ToLower();
+                word = sb.ReplaceWordToInfinitive();
 
                 result.Add(word);
                 sb.Clear();
             }
             return result;
-
         }
-        
+
+        public static string ReplaceWordToInfinitive(this StringBuilder sb)
+        {
+            string result = sb.ToString();
+
+            result = result.RemoveLastCharByLists();
+            result = result.ReplcaceRegularVerbForm();
+            result = result.ReplcaceIrregularVerbForm();
+            result = result.ToLower();
+
+            return result;
+        }
+
         public static bool IsBadWord(this string text)
         {
             var result = text.IsContainUnneceseryCharacter();
@@ -72,20 +74,19 @@ namespace TooExe.Owl.Library
 
         public static string RemoveLastCharByLists(this string text, string unnecessaryCharacters = "\".,;:'?")
         {
-           
             foreach (var c in unnecessaryCharacters.ToCharArray())
             {
-                if (text[text.Length-1]==c)
+                if (text[text.Length - 1] == c)
                 {
                     text = text.Remove(text.Length - 1);
                 }
             }
-            return text; 
+            return text;
         }
 
         public static string ReplcaceRegularVerbForm(this string text)
         {
-          if ((text[text.Length-1]=='d')&&(text[text.Length - 2] == 'e'))
+            if ((text[text.Length - 1] == 'd') && (text[text.Length - 2] == 'e'))
             {
                 text = text.Remove(text.Length - 2);
             }
@@ -93,11 +94,11 @@ namespace TooExe.Owl.Library
             return text;
         }
 
-        public static string ReplcaceIrregularVerbForm(this string text )
+        public static string ReplcaceIrregularVerbForm(this string text)
         {
             foreach (var verb in ListIrregularVerbForms)
             {
-                if ((text == verb.FirstForm) || (text==verb.SecondForm)||(text==verb.ThirdForm))
+                if ((text == verb.FirstForm) || (text == verb.SecondForm) || (text == verb.ThirdForm))
                 {
                     return verb.FirstForm;
                 }
@@ -109,12 +110,12 @@ namespace TooExe.Owl.Library
         public static bool IsContainUnneceseryCharacter(this string text, string charsCharacter = @"~`1234567890!@#$%^&*()_=+{[}]\|<>/")
         {
             var result = text.IndexOfAny(charsCharacter.ToCharArray()) != -1;
-            if ((result==false)&&(text.Length>1))
+            if ((result == false) && (text.Length > 1))
             {
                 text = text.Remove(text.Length - 1);
                 result = text.IndexOfAny("\".,;:'?".ToCharArray()) != -1;
             }
-            
+
             return result;
         }
 
@@ -136,8 +137,5 @@ namespace TooExe.Owl.Library
 
             return false;
         }
-
     }
-
-   
 }

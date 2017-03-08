@@ -12,21 +12,22 @@ namespace TooExe.Owl.Library
         {
             var result = new List<IrregularVerbForms>();
 
-            String[] verbs;
             try
             {   // Open the text file using a stream reader.
-                var fileStream = new FileStream(@path, FileMode.Open, FileAccess.Read);
+                var fileStream = new FileStream(path, FileMode.Open, FileAccess.Read);
                 using (StreamReader sr = new StreamReader(fileStream, Encoding.UTF8))
                 {
                     // Read the stream to a string, and write the string to the console.
-                    verbs = sr.ReadToEnd().Split(';');
+                    var verbs = sr.ReadToEnd().Split(';');
                     int i = 0;
                     for (int j = 0; j < verbs.Length - 1; j += 3)
                     {
-                        IrregularVerbForms tmpIrregularVerbForms = new IrregularVerbForms();
-                        tmpIrregularVerbForms.FirstForm = Regex.Replace(verbs[i++], @"\t|\n|\r", "");
-                        tmpIrregularVerbForms.SecondForm = verbs[i++];
-                        tmpIrregularVerbForms.ThirdForm = verbs[i++];
+                        IrregularVerbForms tmpIrregularVerbForms = new IrregularVerbForms
+                        {
+                            FirstForm = Regex.Replace(verbs[i++], @"\t|\n|\r", ""),
+                            SecondForm = verbs[i++],
+                            ThirdForm = verbs[i++]
+                        };
 
                         result.Add(tmpIrregularVerbForms);
                     }
@@ -34,7 +35,7 @@ namespace TooExe.Owl.Library
             }
             catch (Exception e)
             {
-                Console.WriteLine("The file could not be read:");
+                Console.WriteLine($"The file could not be read: {e.Message}");
             }
             return result;
         }
@@ -45,7 +46,7 @@ namespace TooExe.Owl.Library
 
             try
             {   // Open the text file using a stream reader.
-                var fileStream = new FileStream(@path, FileMode.Open, FileAccess.Read);
+                var fileStream = new FileStream(path, FileMode.Open, FileAccess.Read);
                 using (StreamReader sr = new StreamReader(fileStream, Encoding.UTF8))
                 {
                     // Read the stream to a string, and write the string to the console.
@@ -54,7 +55,7 @@ namespace TooExe.Owl.Library
             }
             catch (Exception e)
             {
-                Console.WriteLine("The file could not be read:");
+                Console.WriteLine("The file could not be read: " + e.Message);
             }
             return result;
         }
