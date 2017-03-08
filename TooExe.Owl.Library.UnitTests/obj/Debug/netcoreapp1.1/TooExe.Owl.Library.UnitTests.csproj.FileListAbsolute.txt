@@ -46,3 +46,7 @@ C:\_repo\OWL\TooExe.Owl.Library.UnitTests\obj\Debug\netcoreapp1.1\TooExe.Owl.Lib
 C:\_repo\OWL\TooExe.Owl.Library.UnitTests\obj\Debug\netcoreapp1.1\TooExe.Owl.Library.UnitTests.AssemblyInfo.cs
 C:\_repo\OWL\TooExe.Owl.Library.UnitTests\obj\Debug\netcoreapp1.1\TooExe.Owl.Library.UnitTests.dll
 C:\_repo\OWL\TooExe.Owl.Library.UnitTests\obj\Debug\netcoreapp1.1\TooExe.Owl.Library.UnitTests.pdb
+C:\_repo\OWL\TooExe.Owl.Library.UnitTests\bin\Debug\netcoreapp1.1\Microsoft.AspNetCore.Hosting.Abstractions.dll
+C:\_repo\OWL\TooExe.Owl.Library.UnitTests\bin\Debug\netcoreapp1.1\Microsoft.AspNetCore.Hosting.Abstractions.xml
+C:\_repo\OWL\TooExe.Owl.Library.UnitTests\bin\Debug\netcoreapp1.1\TestFiles\SmallPartOfBookToTest.txt
+C:\_repo\OWL\TooExe.Owl.Library.UnitTests\bin\Debug\netcoreapp1.1\TestFiles\IrregularVerbForms.txt

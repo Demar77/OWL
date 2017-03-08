@@ -8,7 +8,6 @@ namespace TooExe.Owl.Library.UnitTests
     [TestClass]
     public class TestStringUtility
     {
-        //[TestInitialize] and [TestCleanup] at the individual test level, [ClassInitialize] and [ClassCleanup] at the class level.
         [TestInitialize()]
         public void Initialize() { }
 

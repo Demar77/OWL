@@ -964,6 +964,15 @@
           "lib/netstandard1.3/Microsoft.CodeAnalysis.Workspaces.dll": {}
         }
       },
+      "Microsoft.CodeCoverage/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {}
+        }
+      },
       "Microsoft.Composition/1.0.27": {
         "type": "package",
         "compile": {
@@ -5181,6 +5190,15 @@
         },
         "runtime": {
           "lib/netstandard1.3/Microsoft.CodeAnalysis.Workspaces.dll": {}
+        }
+      },
+      "Microsoft.CodeCoverage/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {}
         }
       },
       "Microsoft.Composition/1.0.27": {
@@ -9448,6 +9466,15 @@
           "lib/netstandard1.3/Microsoft.CodeAnalysis.Workspaces.dll": {}
         }
       },
+      "Microsoft.CodeCoverage/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {}
+        }
+      },
       "Microsoft.Composition/1.0.27": {
         "type": "package",
         "compile": {
@@ -13711,6 +13738,15 @@
           "lib/netstandard1.3/Microsoft.CodeAnalysis.Workspaces.dll": {}
         }
       },
+      "Microsoft.CodeCoverage/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {}
+        }
+      },
       "Microsoft.Composition/1.0.27": {
         "type": "package",
         "compile": {
@@ -17799,6 +17835,16 @@
         "lib/portable-net45+win8/Microsoft.CodeAnalysis.Workspaces.xml",
         "microsoft.codeanalysis.workspaces.common.1.3.0.nupkg.sha512",
         "microsoft.codeanalysis.workspaces.common.nuspec"
+      ]
+    },
+    "Microsoft.CodeCoverage/1.0.2": {
+      "sha512": "3F7by85D2M8ksKeAw6tnWSEAij9c/VRCxzXbgVAVWv1J8tgVicfVhasSiEf7o4OnwRJBQwtZDEhmnMmCb0wh8A==",
+      "type": "package",
+      "path": "microsoft.codecoverage/1.0.2",
+      "files": [
+        "lib/netstandard1.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll",
+        "microsoft.codecoverage.1.0.2.nupkg.sha512",
+        "microsoft.codecoverage.nuspec"
       ]
     },
     "Microsoft.Composition/1.0.27": {
@@ -24313,6 +24359,7 @@
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 1.1.0",
       "Microsoft.AspNetCore.Mvc >= 1.1.1",
       "Microsoft.AspNetCore.StaticFiles >= 1.1.0",
+      "Microsoft.CodeCoverage >= 1.0.2",
       "Microsoft.EntityFrameworkCore.Design >= 1.1.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 1.1.0",
       "Microsoft.EntityFrameworkCore.SqlServer.Design >= 1.1.0",
@@ -24411,6 +24458,10 @@
           "Microsoft.ApplicationInsights.AspNetCore": {
             "target": "Package",
             "version": "2.0.0-beta1"
+          },
+          "Microsoft.CodeCoverage": {
+            "target": "Package",
+            "version": "1.0.2"
           },
           "Microsoft.AspNetCore.StaticFiles": {
             "target": "Package",

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
 using System.Text;
 
 namespace TooExe.Owl.Library
@@ -13,7 +11,7 @@ namespace TooExe.Owl.Library
             var chars = text.ToCharArray();
             var result = new List<string>();
             var sb = new StringBuilder();
-            string word=String.Empty;
+            string word;
 
             foreach (var c in chars)
             {
@@ -54,7 +52,6 @@ namespace TooExe.Owl.Library
 
         }
         
-        //http://stackoverflow.com/questions/1390749/check-if-a-string-contains-one-of-10-characters
         public static bool IsBadWord(this string text)
         {
             var result = text.IsContainUnneceseryCharacter();
@@ -70,29 +67,27 @@ namespace TooExe.Owl.Library
            
             foreach (var c in unnecessaryCharacters.ToCharArray())
             {
-                if ((char)text[text.Length-1]==c)
+                if (text[text.Length-1]==c)
                 {
                     text = text.Remove(text.Length - 1);
                 }
             }
             return text; 
         }
+
         public static string ReplcaceRegularVerbForm(this string text)
         {
-            
-            char a = (char) text[text.Length - 1];
-            char b = (char) text[text.Length - 2];
-
-            if (((char)text[text.Length-1]=='d')&&((char)text[text.Length - 2] == 'e'))
+          if ((text[text.Length-1]=='d')&&(text[text.Length - 2] == 'e'))
             {
                 text = text.Remove(text.Length - 2);
             }
 
             return text;
         }
+
         public static string ReplcaceIrregularVerbForm(this string text, List<IrregularVerbForms> listIrregularVerbForms )
         {
-           //Read list from file
+           //TODO Read list from file
 
            
 
@@ -117,7 +112,7 @@ namespace TooExe.Owl.Library
 
             foreach (var item in text.ToCharArray())
             {
-                if (((int)item >= 65) && ((int)item <= 90))
+                if ((item >= 65) && (item <= 90))
                 {
                     numberUpperCaseLetter++;
                 }

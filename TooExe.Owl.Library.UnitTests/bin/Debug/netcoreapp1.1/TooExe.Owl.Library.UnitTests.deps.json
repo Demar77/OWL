@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.1",
-    "signature": "7159e623724e7c13d0f2d3a7fed61e4ae74b5546"
+    "signature": "11eafc5c94fccb17d9a24600ac3d940e2c56d634"
   },
   "compilationOptions": {},
   "targets": {
@@ -10,11 +10,17 @@
         "dependencies": {
           "MSTest.TestAdapter": "1.1.8-rc",
           "MSTest.TestFramework": "1.0.8-rc",
+          "Microsoft.CodeCoverage": "1.0.2",
           "Microsoft.NET.Test.Sdk": "15.0.0-preview-20170106-08",
           "TooExe.Owl.Library": "1.0.0"
         },
         "runtime": {
           "TooExe.Owl.Library.UnitTests.dll": {}
+        }
+      },
+      "microsoft.codecoverage/1.0.2": {
+        "runtime": {
+          "lib/netstandard1.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {}
         }
       },
       "microsoft.net.test.sdk/15.0.0-preview-20170106-08": {
@@ -161,6 +167,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "microsoft.codecoverage/1.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3F7by85D2M8ksKeAw6tnWSEAij9c/VRCxzXbgVAVWv1J8tgVicfVhasSiEf7o4OnwRJBQwtZDEhmnMmCb0wh8A==",
+      "path": "microsoft.codecoverage/1.0.2",
+      "hashPath": "microsoft.codecoverage.1.0.2.nupkg.sha512"
     },
     "microsoft.net.test.sdk/15.0.0-preview-20170106-08": {
       "type": "package",
