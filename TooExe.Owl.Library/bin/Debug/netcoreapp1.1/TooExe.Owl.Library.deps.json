@@ -1,14 +1,22 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.1",
-    "signature": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+    "signature": "74360ab42e72f22e7de47f4bef432219d675ee7a"
   },
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v1.1": {
       "tooexe.owl.library/1.0.0": {
+        "dependencies": {
+          "Microsoft.CodeCoverage": "1.0.2"
+        },
         "runtime": {
           "TooExe.Owl.Library.dll": {}
+        }
+      },
+      "microsoft.codecoverage/1.0.2": {
+        "runtime": {
+          "lib/netstandard1.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {}
         }
       }
     }
@@ -18,6 +26,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "microsoft.codecoverage/1.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3F7by85D2M8ksKeAw6tnWSEAij9c/VRCxzXbgVAVWv1J8tgVicfVhasSiEf7o4OnwRJBQwtZDEhmnMmCb0wh8A==",
+      "path": "microsoft.codecoverage/1.0.2",
+      "hashPath": "microsoft.codecoverage.1.0.2.nupkg.sha512"
     }
   }
 }

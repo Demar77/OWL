@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.1",
-    "signature": "c08c575414de87306cc26aba0edbbc5fcdc81270"
+    "signature": "7e3fb0d376f89761a4b6e116854edb8497a4f908"
   },
   "compilationOptions": {
     "defines": [
@@ -30,6 +30,7 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.1.0",
           "Microsoft.AspNetCore.Mvc": "1.1.1",
           "Microsoft.AspNetCore.StaticFiles": "1.1.0",
+          "Microsoft.CodeCoverage": "1.0.2",
           "Microsoft.EntityFrameworkCore.Design": "1.1.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "1.1.0",
           "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.1.0",
@@ -839,6 +840,14 @@
         },
         "compile": {
           "lib/netstandard1.3/Microsoft.CodeAnalysis.Workspaces.dll": {}
+        }
+      },
+      "microsoft.codecoverage/1.0.2": {
+        "runtime": {
+          "lib/netstandard1.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {}
         }
       },
       "microsoft.composition/1.0.27": {
@@ -3910,6 +3919,13 @@
       "sha512": "sha512-dfH9HlSgfjGMkHaaKRkO28ycwtruLpZfqHTb+LPqhQlsqaHUNG5x7ezzEMENKMepeqZq6KCFSGtFR5JgLXXoqA==",
       "path": "microsoft.codeanalysis.workspaces.common/1.3.0",
       "hashPath": "microsoft.codeanalysis.workspaces.common.1.3.0.nupkg.sha512"
+    },
+    "microsoft.codecoverage/1.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3F7by85D2M8ksKeAw6tnWSEAij9c/VRCxzXbgVAVWv1J8tgVicfVhasSiEf7o4OnwRJBQwtZDEhmnMmCb0wh8A==",
+      "path": "microsoft.codecoverage/1.0.2",
+      "hashPath": "microsoft.codecoverage.1.0.2.nupkg.sha512"
     },
     "microsoft.composition/1.0.27": {
       "type": "package",

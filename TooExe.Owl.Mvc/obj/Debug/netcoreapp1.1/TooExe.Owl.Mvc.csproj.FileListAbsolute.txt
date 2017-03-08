@@ -33,3 +33,4 @@ C:\_repo\OWL\TooExe.Owl.Mvc\obj\Debug\netcoreapp1.1\TooExe.Owl.Mvc.AssemblyInfo.
 C:\_repo\OWL\TooExe.Owl.Mvc\obj\Debug\netcoreapp1.1\TooExe.Owl.Mvc.dll
 C:\_repo\OWL\TooExe.Owl.Mvc\obj\Debug\netcoreapp1.1\TooExe.Owl.Mvc.pdb
 C:\_repo\OWL\TooExe.Owl.Mvc\obj\Debug\netcoreapp1.1\TooExe.Owl.Mvc.csprojResolveAssemblyReference.cache
+C:\_repo\OWL\TooExe.Owl.Mvc\obj\Debug\netcoreapp1.1\UserSecretsAssemblyInfo.cs
