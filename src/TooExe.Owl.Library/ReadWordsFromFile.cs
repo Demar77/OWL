@@ -13,8 +13,10 @@ namespace TooExe.Owl.Library
             var result = new List<IrregularVerbForms>();
 
             try
-            {   // Open the text file using a stream reader.
+            {
+                // Open the text file using a stream reader.
                 var fileStream = new FileStream(path, FileMode.Open, FileAccess.Read);
+
                 using (StreamReader sr = new StreamReader(fileStream, Encoding.UTF8))
                 {
                     // Read the stream to a string, and write the string to the console.
@@ -45,7 +47,8 @@ namespace TooExe.Owl.Library
             string result = String.Empty;
 
             try
-            {   // Open the text file using a stream reader.
+            {
+                // Open the text file using a stream reader.
                 var fileStream = new FileStream(path, FileMode.Open, FileAccess.Read);
                 using (StreamReader sr = new StreamReader(fileStream, Encoding.UTF8))
                 {

@@ -1,14 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Security.Authentication;
+using System.Text;
+using System.Text.RegularExpressions;
 using Xunit;
 
 namespace TooExe.Owl.Library.UnitTests.IntegrationTests
 {
-    
     public class IntegrationTestsOwlLibrary
     {
-       
-
         [Fact]
         public void CanCreateWordList()
         {
@@ -33,7 +35,7 @@ namespace TooExe.Owl.Library.UnitTests.IntegrationTests
             }
             else
             {
-              //  Assert.Fail("String not loaded from file.");
+                //  Assert.Fail("String not loaded from file.");
             }
         }
 
@@ -109,6 +111,21 @@ namespace TooExe.Owl.Library.UnitTests.IntegrationTests
         }
 
         [Fact]
+        public void CanGetIrregularVerbFormsFromFile_ThrowException()
+        {
+            // Arrange all necessary preconditions and inputs.
+            string inputPath = @"/badpath/filedontexist.txt";
+            //return 0 allways when catch exception
+            var expected = 0;
+
+            // Act on the object or method under test.
+            var actual = new ReadWordsFromFile().GetIrregularVerbForms(inputPath);
+
+            // Assert that the expected results have occurred.
+            Assert.Equal(expected, actual.Count);
+        }
+
+        [Fact]
         public void CanGetStringFromFile()
         {
             // Arrange all necessary preconditions and inputs.
@@ -124,6 +141,44 @@ namespace TooExe.Owl.Library.UnitTests.IntegrationTests
             Assert.Equal(expected, actual.Length);
         }
 
-      
+        [Fact]
+        public void CanGetStringFromFile_ThrowException()
+        {
+            // Arrange all necessary preconditions and inputs.
+            string inputPath = @"/badpath/filedontexist.txt";
+            //return 0 allways when catch exception
+            var expected = 0;
+            // Act on the object or method under test.
+            var actual = new ReadWordsFromFile().GetStringFromFile(inputPath);
+
+            // Assert that the expected results have occurred.
+            Assert.Equal(expected, actual.Length);
+        }
+
+        [Fact]
+        public void CanReplacePluralWords_ReplaceToSingular()
+        {
+            // Arrange all necessary preconditions and inputs.
+            var rootPath = System.AppContext.BaseDirectory;
+            string inputPath = rootPath + @"/TestFiles/NounListToTests.txt";
+            var fileStream = new FileStream(inputPath, FileMode.Open, FileAccess.Read);
+
+            using (StreamReader sr = new StreamReader(fileStream, Encoding.UTF8))
+            {
+                // Read the stream to a string, and write the string to the console.
+                var verbs = sr.ReadToEnd().Split(';');
+                int i = 0;
+                for (int j = 0; j < verbs.Length - 1; j += 3)
+                {
+                    string expected = Regex.Replace(verbs[i++], @"\t|\n|\r", "");
+                    string actual = verbs[i++].ReplacePluralWords();
+                    Assert.Equal(expected, actual);
+                }
+            }
+
+            // Act on the object or method under test.
+
+            // Assert that the expected results have occurred.
+        }
     }
 }

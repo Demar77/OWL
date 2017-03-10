@@ -1,5 +1,5 @@
---temp-output:D:\OneDrive_dane\OneDrive\_blog\OWL2\Owl\src\TooExe.Owl.Library.UnitTests\obj\Debug\netcoreapp1.1\
---out:D:\OneDrive_dane\OneDrive\_blog\OWL2\Owl\src\TooExe.Owl.Library.UnitTests\bin\Debug\netcoreapp1.1\TooExe.Owl.Library.UnitTests.dll
+--temp-output:C:\_repo\OWL\src\TooExe.Owl.Library.UnitTests\obj\Debug\netcoreapp1.1\
+--out:C:\_repo\OWL\src\TooExe.Owl.Library.UnitTests\bin\Debug\netcoreapp1.1\TooExe.Owl.Library.UnitTests.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_1
@@ -116,8 +116,8 @@
 --reference:C:\Users\kotecki.marcin\.nuget\packages\xunit.extensibility.execution\2.2.0\lib\netstandard1.1\xunit.execution.dotnet.dll
 --reference:C:\Users\kotecki.marcin\.nuget\packages\xunit.runner.reporters\2.2.0-beta2-build3300\lib\netstandard1.1\xunit.runner.reporters.dotnet.dll
 --reference:C:\Users\kotecki.marcin\.nuget\packages\xunit.runner.utility\2.2.0-beta2-build3300\lib\netstandard1.1\xunit.runner.utility.dotnet.dll
---reference:D:\OneDrive_dane\OneDrive\_blog\OWL2\Owl\src\TooExe.Owl.Library\bin\Debug\netcoreapp1.1\TooExe.Owl.Library.dll
-D:\OneDrive_dane\OneDrive\_blog\OWL2\Owl\src\TooExe.Owl.Library.UnitTests\TestPreparingWords.cs
-D:\OneDrive_dane\OneDrive\_blog\OWL2\Owl\src\TooExe.Owl.Library.UnitTests\TestStringUtility.cs
-D:\OneDrive_dane\OneDrive\_blog\OWL2\Owl\src\TooExe.Owl.Library.UnitTests\IntegrationTests\IntegrationTestsOwlLibrary.cs
-D:\OneDrive_dane\OneDrive\_blog\OWL2\Owl\src\TooExe.Owl.Library.UnitTests\Properties\AssemblyInfo.cs
+--reference:C:\_repo\OWL\src\TooExe.Owl.Library\bin\Debug\netcoreapp1.1\TooExe.Owl.Library.dll
+C:\_repo\OWL\src\TooExe.Owl.Library.UnitTests\TestPreparingWords.cs
+C:\_repo\OWL\src\TooExe.Owl.Library.UnitTests\TestStringUtility.cs
+C:\_repo\OWL\src\TooExe.Owl.Library.UnitTests\IntegrationTests\IntegrationTestsOwlLibrary.cs
+C:\_repo\OWL\src\TooExe.Owl.Library.UnitTests\Properties\AssemblyInfo.cs

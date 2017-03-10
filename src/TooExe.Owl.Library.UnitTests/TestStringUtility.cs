@@ -3,17 +3,15 @@ using Xunit;
 
 namespace TooExe.Owl.Library.UnitTests
 {
-   
     public class TestStringUtility
     {
-       
         [Theory]
-        [InlineData(@"This is  my example finished bit")]
-        [InlineData(@"This 12312 @$FWF WEsdfgsdfs is;  my, example asdfasdas.sdf Finished bitten")]
+        [InlineData(@"This is  my example? finished bit!!!!! son-in-law")]
+        [InlineData(@"This 12312 @$FWF WEsdfgsdfs is;  my,,, example. asdfasdas.sdf Finished bitten son-in-law !.@@@")]
         public void ToWordList_DirtyString_ExpectedWord(string input)
         {
             // Arrange all necessary preconditions and inputs.
-            var expected = new List<string> { "this", "is", "my", "example", "finish", "bite" };
+            var expected = new List<string> { "this", "is", "my", "example", "finish", "bite", "son-in-law" };
 
             // Act on the object or method under test.
             var actual = input.ToWordList() as List<string>;
@@ -30,8 +28,25 @@ namespace TooExe.Owl.Library.UnitTests
             }
             else
             {
-                Assert.False(true,"No string in input.");
+                Assert.True(true, "No string in input.");
             }
+        }
+
+        [Theory]
+        [InlineData(null)]
+        [InlineData("1234")]
+        [InlineData("@dfg 345345 345345 34535")]
+        [InlineData("wrod_wrong_sight")]
+        public void ToWordList_NullOrWrongString_ExpectedEmptyList(string input)
+        {
+            // Arrange all necessary preconditions and inputs.
+            var expected = 0;
+
+            // Act on the object or method under test.
+            var actual = input.ToWordList() as List<string>;
+
+            // Assert that the expected results have occurred.
+            Assert.Equal(expected, actual.Count);
         }
 
         [Theory]
@@ -85,6 +100,9 @@ namespace TooExe.Owl.Library.UnitTests
         [InlineData("Forest:")]
         [InlineData("Forest'")]
         [InlineData("Forest?")]
+        [InlineData("Forest????,:;!!!??")]
+        [InlineData("Forest......")]
+        [InlineData("Forest,,,,,,,,,,,")]
         public void RemoveLastCharByLists_ExpectedCharToEndString_RemoveLastChar(string input)
         {
             // Arrange all necessary preconditions and inputs.
@@ -116,10 +134,10 @@ namespace TooExe.Owl.Library.UnitTests
         [InlineData(@"12312312312")]
         [InlineData(@"ReD")]
         [InlineData(@"Forest/")]
-        [InlineData(@"Forest.House")]
-        [InlineData(@"Forest.house")]
-        [InlineData(@"Forest?house")]
-        [InlineData(@"Forest,house")]
+        [InlineData(@"Forest]House")]
+        [InlineData(@"ForestKLhouse")]
+        [InlineData(@"Forest#house")]
+        [InlineData(@"Forest6house")]
         public void IsBadWord_InsertBadWord_True(string input)
         {
             // Arrange all necessary preconditions and inputs.
@@ -145,6 +163,23 @@ namespace TooExe.Owl.Library.UnitTests
 
             // Act on the object or method under test.
             string actual = input.ReplcaceIrregularVerbForm();
+
+            // Assert that the expected results have occurred.
+            Assert.Equal(expected, actual);
+        }
+
+        [Theory]
+        [InlineData("dresses", "dress")]
+        [InlineData("boxes", "box")]
+        [InlineData("bushes", "bush")]
+        [InlineData("buses", "bus")]
+        [InlineData("watches", "watch")]
+        public void ReplacePluralWords_ExpectedPluralWord_ReplaceToSingular(string input, string expected)
+        {
+            // Arrange all necessary preconditions and inputs.
+
+            // Act on the object or method under test.
+            string actual = input.ReplacePluralWords();
 
             // Assert that the expected results have occurred.
             Assert.Equal(expected, actual);
