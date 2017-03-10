@@ -1,7 +1,0 @@
-F:\VS_online\Owl\TooExe.Owl.Library\bin\Debug\netcoreapp1.0\TooExe.Owl.Library.deps.json
-F:\VS_online\Owl\TooExe.Owl.Library\bin\Debug\netcoreapp1.0\TooExe.Owl.Library.dll
-F:\VS_online\Owl\TooExe.Owl.Library\bin\Debug\netcoreapp1.0\TooExe.Owl.Library.pdb
-F:\VS_online\Owl\TooExe.Owl.Library\obj\Debug\netcoreapp1.0\TooExe.Owl.Library.csprojResolveAssemblyReference.cache
-F:\VS_online\Owl\TooExe.Owl.Library\obj\Debug\netcoreapp1.0\TooExe.Owl.Library.AssemblyInfo.cs
-F:\VS_online\Owl\TooExe.Owl.Library\obj\Debug\netcoreapp1.0\TooExe.Owl.Library.dll
-F:\VS_online\Owl\TooExe.Owl.Library\obj\Debug\netcoreapp1.0\TooExe.Owl.Library.pdb

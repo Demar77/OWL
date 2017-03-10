@@ -1,0 +1,30 @@
+﻿{
+  "version": "1.0.0-*",
+
+  //"buildOptions": {
+  //  //"emitEntryPoint": true,
+  //  "copyToOutput": [ "IrregularVerbForms.txt","Files\\" ]
+  //},
+  "buildOptions": {
+ 
+    "copyToOutput": [ "IrregularVerbForms.txt", "Files\\" ]
+  },
+  "dependencies": {
+    "Microsoft.DotNet.Files": "1.0.0-preview2-1-003177",
+    "NETStandard.Library": "1.6.1"
+  },
+
+  "frameworks": {
+    "netcoreapp1.1": {
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "type": "platform",
+          "version": "1.1.1"
+        }
+      }
+    },
+    "netstandard1.6": {
+      "imports": "dnxcore50"
+    }
+  }
+}
