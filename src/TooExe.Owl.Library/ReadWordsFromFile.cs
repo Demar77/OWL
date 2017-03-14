@@ -56,7 +56,7 @@ namespace TooExe.Owl.Library
                     // Read the stream to a string, and write the string to the console.
                     var verbs = sr.ReadToEnd().Split(';');
                     int i = 0;
-                    for (int j = 0; j < verbs.Length - 1; j += 3)
+                    for (int j = 0; j < verbs.Length - 1; j += 2)
                     {
                         NounWordsList irregulatNoun = new NounWordsList
                         {

@@ -3,6 +3,6 @@
 	
 	
 	<s:String x:Key="/Default/Environment/ContinuousTesting/PersistentDataLocation/@EntryValue">C:\Users\kotecki.marcin\AppData\Local\Temp\JetBrains\ContinuousTesting\0c4bbf6b-671d-4114-97f0-94d47398dda3</s:String>
-	<s:String x:Key="/Default/Environment/ContinuousTesting/SnapshotLocation/@EntryValue">C:\Users\kotecki.marcin\AppData\Local\Temp\ssm.Zurakar.tmp</s:String>
-	<s:String x:Key="/Default/Environment/ContinuousTesting/Strategy/@EntryValue">RunTests</s:String>
-	<s:String x:Key="/Default/Environment/ContinuousTesting/TriggerMode/@EntryValue">OnBuild</s:String></wpf:ResourceDictionary>
+	<s:String x:Key="/Default/Environment/ContinuousTesting/SnapshotLocation/@EntryValue">C:\Users\Marcin\AppData\Local\Temp\ssm.Kyzadav.tmp</s:String>
+	<s:String x:Key="/Default/Environment/ContinuousTesting/Strategy/@EntryValue">Manual</s:String>
+	</wpf:ResourceDictionary>
