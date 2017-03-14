@@ -1,7 +1,7 @@
-﻿dress;dresses;
+﻿house;houses;
+dress;dresses;
 box;boxes;
 boat;boats;
-house;houses;
 cat;cats;
 river;rivers;
 bus;buses;

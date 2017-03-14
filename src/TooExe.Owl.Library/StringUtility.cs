@@ -6,12 +6,15 @@ namespace TooExe.Owl.Library
     public static class StringUtility
     {
         public static List<IrregularVerbForms> ListIrregularVerbForms { get; }
+        public static List<NounWordsList> ListIrregularNouns { get; }
 
         static StringUtility()
         {
             var rootPath = System.AppContext.BaseDirectory;
-            string path = rootPath + @"/Files/IrregularVerbForms.txt";
-            ListIrregularVerbForms = new ReadWordsFromFile().GetIrregularVerbForms(path);
+            string pathVerbs = rootPath + @"/Files/IrregularVerbForms.txt";
+            string pathNouns = rootPath + @"/Files/IrregularNouns.txt";
+            ListIrregularVerbForms = new ReadWordsFromFile().GetIrregularVerbForms(pathVerbs);
+            ListIrregularNouns = new ReadWordsFromFile().GetIrregularNounForms(pathNouns);
         }
 
         public static IEnumerable<string> ToWordList(this string text)
@@ -111,6 +114,14 @@ namespace TooExe.Owl.Library
 
         public static string ReplacePluralWords(this string text)
         {
+            foreach (var noun in ListIrregularNouns)
+            {
+                if ((text == noun.Plural) || (text == noun.Singular))
+                {
+                    return noun.Singular;
+                }
+            }
+
             if (
                  text.EndsWith("ches") ||
                  text.EndsWith("ses") ||
@@ -133,6 +144,13 @@ namespace TooExe.Owl.Library
                     if ((text.EndsWith("es")) || (text.EndsWith("ys")))
                     {
                         text = text.Remove(text.Length - 1);
+                    }
+                    else
+                    {
+                        if (text.EndsWith("s"))
+                        {
+                            text = text.Remove(text.Length - 1);
+                        }
                     }
                 }
             }
