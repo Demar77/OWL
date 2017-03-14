@@ -1,18 +1,10 @@
 {
   "buildOptions": {
-
     //"emitEntryPoint": true,
     "copyToOutput": [
-      "IrregularVerbForms.txt",
       "Files\\",
-      "IrregularVerbForms.txt",
-      "TestFiles\\",
-      "LargeBookToTest.txt",
-      "TestFiles\\",
-      "SmallPartOfBookToTest.txt",
       "TestFiles\\"
     ]
-
   },
   "version": "1.0.0-*",
   "testRunner": "xunit",
