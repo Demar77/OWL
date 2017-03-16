@@ -168,7 +168,7 @@ namespace TooExe.Owl.Library.UnitTests.IntegrationTests
                 // Read the stream to a string, and write the string to the console.
                 var verbs = sr.ReadToEnd().Split(';');
                 int i = 0;
-                for (int j = 0; j < verbs.Length - 1; j += 3)
+                for (int j = 0; j < verbs.Length - 1; j += 2)
                 {
                     string expected = Regex.Replace(verbs[i++], @"\t|\n|\r", "");
                     string actual = verbs[i++].ReplacePluralWords();

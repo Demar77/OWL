@@ -147,7 +147,7 @@ namespace TooExe.Owl.Library
                     }
                     else
                     {
-                        if ((text.EndsWith("s"))&&(!text.EndsWith("is")))
+                        if ((text.EndsWith("s"))&&(!text.EndsWith("is")) && (!text.EndsWith("ss")))
                         {
                             text = text.Remove(text.Length - 1);
                         }
