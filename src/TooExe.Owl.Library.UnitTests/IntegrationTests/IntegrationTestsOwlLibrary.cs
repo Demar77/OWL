@@ -171,7 +171,7 @@ namespace TooExe.Owl.Library.UnitTests.IntegrationTests
                 for (int j = 0; j < verbs.Length - 1; j += 2)
                 {
                     string expected = Regex.Replace(verbs[i++], @"\t|\n|\r", "");
-                    string actual = verbs[i++].ReplacePluralWords();
+                    string actual = verbs[i++].ReplaceRegularPluralWords();
                     Assert.Equal(expected, actual);
                 }
             }

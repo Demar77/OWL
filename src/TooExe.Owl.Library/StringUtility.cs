@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace TooExe.Owl.Library
@@ -71,7 +72,8 @@ namespace TooExe.Owl.Library
 
             result = result.ReplcaceRegularVerbForm();
             result = result.ReplcaceIrregularVerbForm();
-            result = result.ReplacePluralWords();
+            result = result.ReplaceRegularPluralWords();
+            result = result.ReplaceIrregularPluralWords();
             result = result.ToLower();
 
             return result;
@@ -112,7 +114,7 @@ namespace TooExe.Owl.Library
             return text;
         }
 
-        public static string ReplacePluralWords(this string text)
+        public static string ReplaceIrregularPluralWords(this string text)
         {
             foreach (var noun in ListIrregularNouns)
             {
@@ -121,7 +123,11 @@ namespace TooExe.Owl.Library
                     return noun.Singular;
                 }
             }
+            return text;
+        }
 
+        public static string ReplaceRegularPluralWords(this string text)
+        {
             if (
                  text.EndsWith("ches") ||
                  text.EndsWith("ses") ||
@@ -147,7 +153,7 @@ namespace TooExe.Owl.Library
                     }
                     else
                     {
-                        if ((text.EndsWith("s"))&&(!text.EndsWith("is")) && (!text.EndsWith("ss")))
+                        if ((text.EndsWith("s")) && (!text.EndsWith("is")) && (!text.EndsWith("ss")))
                         {
                             text = text.Remove(text.Length - 1);
                         }
@@ -176,11 +182,6 @@ namespace TooExe.Owl.Library
         public static bool IsContainUnneceseryCharacter(this string text, string charsCharacter = @"~`1234567890@#$%^&*()_=+{[}]\|<>/")
         {
             var result = text.IndexOfAny(charsCharacter.ToCharArray()) != -1;
-            //if ((result == false) && (text.Length > 1))
-            //{
-            //    text = text.Remove(text.Length - 1);
-            //    result = text.IndexOfAny("\".,;:'?!".ToCharArray()) != -1;
-            //}
 
             return result;
         }

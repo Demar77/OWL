@@ -117,6 +117,8 @@ namespace TooExe.Owl.Library.UnitTests
 
         [Theory]
         [InlineData(@"12312312312")]
+        [InlineData(@"mark@gmail.com")]
+        [InlineData(@"Ma#$t")]
         public void IsContainUnneceseryCharacter_InsertUnneceseryCharacter_True(string input)
         {
             // Arrange all necessary preconditions and inputs.
@@ -179,7 +181,7 @@ namespace TooExe.Owl.Library.UnitTests
             // Arrange all necessary preconditions and inputs.
 
             // Act on the object or method under test.
-            string actual = input.ReplacePluralWords();
+            string actual = input.ReplaceRegularPluralWords();
 
             // Assert that the expected results have occurred.
             Assert.Equal(expected, actual);
