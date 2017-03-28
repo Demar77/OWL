@@ -130,7 +130,7 @@ namespace TooExe.Owl.Library
         {
             foreach (var noun in ListIrregularNouns)
             {
-                if ((text == noun.Singular))
+                if ((text == noun.Plural))
                 {
                     return true;
                 }
