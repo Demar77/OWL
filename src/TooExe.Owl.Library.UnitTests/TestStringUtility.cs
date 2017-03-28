@@ -58,13 +58,13 @@ namespace TooExe.Owl.Library.UnitTests
         [InlineData(@"abcd")]
         [InlineData(@"ab")]
         [InlineData(@"a")]
-        public void HaveTwoOrMoreUpperCaseLetter_StringDontContainTwoOrMoreUpperCaseLetter_True(string input)
+        public void HaveTwoOrMoreCapitalLetter_StringDontContainTwoOrMoreUpperCaseLetter_True(string input)
         {
             // Arrange all necessary preconditions and inputs.
             var expected = false;
 
             // Act on the object or method under test.
-            var actual = input.HaveTwoOrMoreUpperCaseLetter();
+            var actual = input.HaveTwoOrMoreCapitalLetter();
 
             // Assert that the expected results have occurred.
             // ReSharper disable once ConditionIsAlwaysTrueOrFalse
@@ -79,13 +79,13 @@ namespace TooExe.Owl.Library.UnitTests
         [InlineData(@"AAbcdef123G")]
         [InlineData(@"AAbcdef123GF")]
         [InlineData(@"abcd123!@#KLsdfgdgerge2342!$@%#^^#")]
-        public void HaveTwoOrMoreUpperCaseLetter_StringContainTwoOrMoreUpperCaseLetter_True(string input)
+        public void HaveTwoOrMoreCapitalLetter_StringContainTwoOrMoreUpperCaseLetter_True(string input)
         {
             // Arrange all necessary preconditions and inputs.
             var expected = true;
 
             // Act on the object or method under test.
-            var actual = input.HaveTwoOrMoreUpperCaseLetter();
+            var actual = input.HaveTwoOrMoreCapitalLetter();
 
             // Assert that the expected results have occurred.
             // ReSharper disable once ConditionIsAlwaysTrueOrFalse

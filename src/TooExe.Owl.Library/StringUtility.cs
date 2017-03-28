@@ -84,7 +84,7 @@ namespace TooExe.Owl.Library
             var result = text.IsContainUnneceseryCharacter();
             if (result == false)
             {
-                result = text.HaveTwoOrMoreUpperCaseLetter();
+                result = text.HaveTwoOrMoreCapitalLetter();
             }
             return result;
         }
@@ -186,17 +186,17 @@ namespace TooExe.Owl.Library
             return result;
         }
 
-        public static bool HaveTwoOrMoreUpperCaseLetter(this string text)
+        public static bool HaveTwoOrMoreCapitalLetter(this string text)
         {
-            int numberUpperCaseLetter = 0;
+            int numberCapitalLetter = 0;
 
             foreach (var item in text.ToCharArray())
             {
                 if ((item >= 65) && (item <= 90))
                 {
-                    numberUpperCaseLetter++;
+                    numberCapitalLetter++;
                 }
-                if (numberUpperCaseLetter > 1)
+                if (numberCapitalLetter > 1)
                 {
                     return true;
                 }
