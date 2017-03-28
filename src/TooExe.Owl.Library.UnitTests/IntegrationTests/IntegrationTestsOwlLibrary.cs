@@ -81,15 +81,15 @@ namespace TooExe.Owl.Library.UnitTests.IntegrationTests
             var rootPath = System.AppContext.BaseDirectory;
             string inputPath = rootPath + @"/TestFiles/IrregularVerbForms.txt";
 
-            var expected = new List<IrregularVerbForms>
+            var expected = new List<IrregularForms>
             {
-                new IrregularVerbForms
+                new IrregularForms
                 {
                     FirstForm = "bend",
                     SecondForm = "bent",
                     ThirdForm = "bent"
                 },
-                new IrregularVerbForms
+                new IrregularForms
                 {
                     FirstForm = "bite",
                     SecondForm = "bit",
@@ -98,7 +98,7 @@ namespace TooExe.Owl.Library.UnitTests.IntegrationTests
             };
 
             // Act on the object or method under test.
-            var actual = new ReadWordsFromFile().GetIrregularVerbForms(inputPath);
+            var actual = new ReadWordsFromFile().GetIrregularForms(inputPath);
 
             // Assert that the expected results have occurred.
             Assert.Equal(expected.Count, actual.Count);
@@ -119,7 +119,7 @@ namespace TooExe.Owl.Library.UnitTests.IntegrationTests
             var expected = 0;
 
             // Act on the object or method under test.
-            var actual = new ReadWordsFromFile().GetIrregularVerbForms(inputPath);
+            var actual = new ReadWordsFromFile().GetIrregularForms(inputPath);
 
             // Assert that the expected results have occurred.
             Assert.Equal(expected, actual.Count);
@@ -171,7 +171,17 @@ namespace TooExe.Owl.Library.UnitTests.IntegrationTests
                 for (int j = 0; j < verbs.Length - 1; j += 2)
                 {
                     string expected = Regex.Replace(verbs[i++], @"\t|\n|\r", "");
-                    string actual = verbs[i++].ReplaceRegularPluralWords();
+                    string actual = "";
+                    if (verbs[i].IsContainWordInIrregularNounForm())
+                    {
+                        actual = verbs[i].ReplaceIrregularPluralWords();
+                    }
+                    else
+                    {
+                        actual = verbs[i].ReplaceRegularPluralWords();
+                    }
+                    i++;
+
                     Assert.Equal(expected, actual);
                 }
             }

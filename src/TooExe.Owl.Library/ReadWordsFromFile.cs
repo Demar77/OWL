@@ -8,9 +8,9 @@ namespace TooExe.Owl.Library
 {
     public class ReadWordsFromFile
     {
-        public List<IrregularVerbForms> GetIrregularVerbForms(string path)
+        public List<IrregularForms> GetIrregularForms(string path)
         {
-            var result = new List<IrregularVerbForms>();
+            var result = new List<IrregularForms>();
 
             try
             {
@@ -20,18 +20,18 @@ namespace TooExe.Owl.Library
                 using (StreamReader sr = new StreamReader(fileStream, Encoding.UTF8))
                 {
                     // Read the stream to a string, and write the string to the console.
-                    var verbs = sr.ReadToEnd().Split(';');
+                    var word = sr.ReadToEnd().Split(';');
                     int i = 0;
-                    for (int j = 0; j < verbs.Length - 1; j += 3)
+                    for (int j = 0; j < word.Length - 1; j += 3)
                     {
-                        IrregularVerbForms tmpIrregularVerbForms = new IrregularVerbForms
+                        IrregularForms tmpIrregularForms = new IrregularForms
                         {
-                            FirstForm = Regex.Replace(verbs[i++], @"\t|\n|\r", ""),
-                            SecondForm = verbs[i++],
-                            ThirdForm = verbs[i++]
+                            FirstForm = Regex.Replace(word[i++], @"\t|\n|\r", ""),
+                            SecondForm = word[i++],
+                            ThirdForm = word[i++]
                         };
 
-                        result.Add(tmpIrregularVerbForms);
+                        result.Add(tmpIrregularForms);
                     }
                 }
             }

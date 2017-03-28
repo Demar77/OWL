@@ -1,6 +1,6 @@
 ﻿namespace TooExe.Owl.Library
 {
-    public class IrregularVerbForms
+    public class IrregularForms
     {
         public string FirstForm { get; set; }
         public string SecondForm { get; set; }

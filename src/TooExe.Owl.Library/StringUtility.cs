@@ -6,7 +6,7 @@ namespace TooExe.Owl.Library
 {
     public static class StringUtility
     {
-        public static List<IrregularVerbForms> ListIrregularVerbForms { get; }
+        public static List<IrregularForms> ListIrregularVerbForms { get; }
         public static List<NounWordsList> ListIrregularNouns { get; }
 
         static StringUtility()
@@ -14,7 +14,7 @@ namespace TooExe.Owl.Library
             var rootPath = System.AppContext.BaseDirectory;
             string pathVerbs = rootPath + @"/Files/IrregularVerbForms.txt";
             string pathNouns = rootPath + @"/Files/IrregularNouns.txt";
-            ListIrregularVerbForms = new ReadWordsFromFile().GetIrregularVerbForms(pathVerbs);
+            ListIrregularVerbForms = new ReadWordsFromFile().GetIrregularForms(pathVerbs);
             ListIrregularNouns = new ReadWordsFromFile().GetIrregularNounForms(pathNouns);
         }
 
@@ -124,6 +124,18 @@ namespace TooExe.Owl.Library
                 }
             }
             return text;
+        }
+
+        public static bool IsContainWordInIrregularNounForm(this string text)
+        {
+            foreach (var noun in ListIrregularNouns)
+            {
+                if ((text == noun.Singular))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public static string ReplaceRegularPluralWords(this string text)
