@@ -172,9 +172,7 @@ namespace TooExe.Owl.Library
                     }
                 }
             }
-            //TODO Exception of plural https://www.ang.pl/gramatyka/rzeczowniki-nouns/liczba-mnoga
-
-            //TODO Create file testing for example 5 thousand words plural - singular
+           
             return text;
         }
 

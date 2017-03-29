@@ -176,7 +176,7 @@ namespace TooExe.Owl.Library.UnitTests
         [InlineData("bushes", "bush")]
         [InlineData("buses", "bus")]
         [InlineData("watches", "watch")]
-        public void ReplacePluralWords_ExpectedPluralWord_ReplaceToSingular(string input, string expected)
+        public void ReplaceRegularPluralWords_ExpectedPluralWord_ReplaceToSingular(string input, string expected)
         {
             // Arrange all necessary preconditions and inputs.
 
