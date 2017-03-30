@@ -38,6 +38,7 @@ namespace TooExe.Owl.Library
 
         public List<FrequencyWordsList> GetFrequencyWordsListsByLevelFrequencyWords(double procent)
         {
+            //TODO secure 101% or -5% and tolerance in decimal maybe 0.01
             if (procent == 100)
             {
                 return ListFrequency;
