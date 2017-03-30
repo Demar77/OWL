@@ -7,6 +7,7 @@ namespace TooExe.Owl.Library.UnitTests
     {
         [Theory]
         [InlineData(@"This is  my example? finished bit!!!!! son-in-law")]
+        [InlineData(null)]
         [InlineData(@"This 12312 @$FWF WEsdfgsdfs is;  my,,, example. asdfasdas.sdf Finished bitten son-in-law !.@@@")]
         public void ToWordList_DirtyString_ExpectedWord(string input)
         {
@@ -17,7 +18,7 @@ namespace TooExe.Owl.Library.UnitTests
             var actual = input.ToWordList() as List<string>;
 
             // Assert that the expected results have occurred.
-            if (actual != null)
+            if (actual.Count>0)
             {
                 Assert.Equal(expected.Count, actual.Count);
 

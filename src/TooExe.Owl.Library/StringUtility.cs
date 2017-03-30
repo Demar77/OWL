@@ -18,6 +18,7 @@ namespace TooExe.Owl.Library
             ListIrregularNouns = new ReadWordsFromFile().GetIrregularNounForms(pathNouns);
         }
 
+        
         public static IEnumerable<string> ToWordList(this string text)
         {
             var result = new List<string>();
