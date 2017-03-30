@@ -171,11 +171,40 @@ namespace TooExe.Owl.Library.UnitTests
         }
 
         [Theory]
+        [InlineData("mice", "mouse")]
+        [InlineData("children", "child")]
+        [InlineData("chiefs", "chief")]
+        [InlineData("feet", "foot")]
+        [InlineData("jeans", "jeans")]
+        [InlineData("data", "datum")]
+        [InlineData("knives", "knife")]
+        [InlineData("buffaloes", "buffalo")]
+        [InlineData("babies", "baby")]
+        public void ReplaceIrregularPluralWords_ExpectedIrregularPluralWords_ReplaceToFirstForm(string input, string expected)
+        {
+            // Arrange all necessary preconditions and inputs.
+
+            // Act on the object or method under test.
+            string actual = input.ReplaceIrregularPluralWords();
+
+            // Assert that the expected results have occurred.
+            Assert.Equal(expected, actual);
+        }
+
+        [Theory]
         [InlineData("dresses", "dress")]
         [InlineData("boxes", "box")]
         [InlineData("bushes", "bush")]
         [InlineData("buses", "bus")]
         [InlineData("watches", "watch")]
+        [InlineData("stomachs", "stomach")]
+        [InlineData("epochs", "epoch")]
+        [InlineData("spoofs", "spoof")]
+        [InlineData("solos", "solo")]
+        [InlineData("zoos", "zoo")]
+        [InlineData("bureaus", "bureau")]
+        [InlineData("berries", "berry")]
+        [InlineData("abbeys", "abbey")]
         public void ReplaceRegularPluralWords_ExpectedPluralWord_ReplaceToSingular(string input, string expected)
         {
             // Arrange all necessary preconditions and inputs.

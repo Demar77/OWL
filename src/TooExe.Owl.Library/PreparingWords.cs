@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace TooExe.Owl.Library
@@ -11,6 +12,11 @@ namespace TooExe.Owl.Library
         public PreparingWords(List<string> listWord, List<FrequencyWordsList> listFrequency)
         {
             _listWord = listWord;
+            ListFrequency = listFrequency;
+        }
+
+        public PreparingWords(List<FrequencyWordsList> listFrequency)
+        {
             ListFrequency = listFrequency;
         }
 
@@ -27,6 +33,18 @@ namespace TooExe.Owl.Library
                 {
                     ListFrequency.Add(new FrequencyWordsList { Word = word, Frequency = 1 });
                 }
+            }
+        }
+
+        public List<FrequencyWordsList> GetFrequencyWordsListsByLevelFrequencyWords(double procent)
+        {
+            if (procent == 100)
+            {
+                return ListFrequency;
+            }
+            else
+            {
+                throw new NotImplementedException();
             }
         }
     }

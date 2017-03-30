@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 
 namespace TooExe.Owl.Library
 {
-    public class ReadWordsFromFile
+    public class ReadWordsFromFile : IReadWordsFromFile
     {
         public List<IrregularForms> GetIrregularForms(string path)
         {
