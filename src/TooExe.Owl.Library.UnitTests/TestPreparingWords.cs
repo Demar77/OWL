@@ -1,7 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
 using Xunit;
 
 namespace TooExe.Owl.Library.UnitTests
@@ -65,59 +62,29 @@ namespace TooExe.Owl.Library.UnitTests
         }
 
         [Fact]
-        public void GetFrequencyWordsListsByLevelFrequencyWords_InsertFrequencyListEqual_GetListGrequencyOnWriteLevel_50proc()
+        public void GetFrequencyWordsListsByLevelFrequencyWords_InsertFrequencyList_GetListGrequencyOnWriteLevel_50proc()
         {
             // Arrange all necessary preconditions and inputs.
             var frequencyList = new List<FrequencyWordsList>
             {
-                new FrequencyWordsList {Word = "red", Frequency = 25},
-                new FrequencyWordsList {Word = "pink", Frequency = 25},
-                new FrequencyWordsList {Word = "yellow", Frequency = 25},
-                new FrequencyWordsList {Word = "blue", Frequency = 25}
+                new FrequencyWordsList {Word = "red", Frequency = 100},
+                new FrequencyWordsList {Word = "pink", Frequency = 100},
+                new FrequencyWordsList {Word = "yellow", Frequency = 100}
             };
             var expected = new List<FrequencyWordsList>
             {
-                new FrequencyWordsList {Word = "red", Frequency = 25},
-                new FrequencyWordsList {Word = "pink", Frequency = 25},
-              };
+                new FrequencyWordsList {Word = "red", Frequency = 100},
+                new FrequencyWordsList {Word = "pink", Frequency = 50},
+            };
             // Act on the object or method under test.
-            var actual = new PreparingWords(frequencyList).GetFrequencyWordsListsByLevelFrequencyWords(50);
+            var actual = new PreparingWords(frequencyList).GetFrequencyWordsListsByLevelFrequencyWords(100);
 
             // Assert that the expected results have occurred.
             for (var i = 0; i < expected.Count; i++)
             {
                 Assert.Equal(expected[i].Word, actual[i].Word);
+                Assert.Equal(expected[i].Frequency, actual[i].Frequency);
             }
         }
-
-        [Fact]
-        public void GetFrequencyWordsListsByLevelFrequencyWords_InsertFrequencyListDifrentValue_GetListGrequencyOnWriteLevel_75proc()
-        {
-            // Arrange all necessary preconditions and inputs.
-            var frequencyList = new List<FrequencyWordsList>
-            {
-                new FrequencyWordsList {Word = "red", Frequency = 20},
-                new FrequencyWordsList {Word = "pink", Frequency = 25},
-                new FrequencyWordsList {Word = "yellow", Frequency = 25},
-                new FrequencyWordsList {Word = "blue", Frequency = 25}
-            };
-            var expected = new List<FrequencyWordsList>
-            {
-                 new FrequencyWordsList {Word = "pink", Frequency = 25},
-                new FrequencyWordsList {Word = "yellow", Frequency = 25},
-                new FrequencyWordsList {Word = "blue", Frequency = 25}
-              };
-            // Act on the object or method under test.
-            var actual = new PreparingWords(frequencyList).GetFrequencyWordsListsByLevelFrequencyWords(75);
-
-            // Assert that the expected results have occurred.
-            for (var i = 0; i < expected.Count; i++)
-            {
-                Assert.Equal(expected[i].Word, actual[i].Word);
-            }
-        }
-
-      
-
     }
 }

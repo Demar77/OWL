@@ -124,20 +124,6 @@ namespace TooExe.Owl.Library.UnitTests.IntegrationTests
             // Assert that the expected results have occurred.
             Assert.Equal(expected, actual.Count);
         }
-        [Fact]
-        public void CanGetIrregularNounFormsFromFile_ThrowException()
-        {
-            // Arrange all necessary preconditions and inputs.
-            string inputPath = @"/badpath/filedontexist.txt";
-            //return 0 allways when catch exception
-            var expected = 0;
-
-            // Act on the object or method under test.
-            var actual = new ReadWordsFromFile().GetIrregularNounForms(inputPath);
-
-            // Assert that the expected results have occurred.
-            Assert.Equal(expected, actual.Count);
-        }
 
         [Fact]
         public void CanGetStringFromFile()
