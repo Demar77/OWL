@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using TooExe.Owl.Mvc.Data;
 
-namespace TooExe.Owl.Mvc.Data.Migrations
+namespace TooExe.Owl.Mvc.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170403125022_Test")]
-    partial class Test
+    [Migration("20170405092603_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -122,20 +122,6 @@ namespace TooExe.Owl.Mvc.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
-                });
-
-            modelBuilder.Entity("TooExe.Owl.Mvc.Data.EnglishWord", b =>
-                {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("FileName");
-
-                    b.Property<string>("Word");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("EnglishWords");
                 });
 
             modelBuilder.Entity("TooExe.Owl.Mvc.Models.ApplicationUser", b =>
