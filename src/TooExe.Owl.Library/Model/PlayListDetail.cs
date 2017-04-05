@@ -15,5 +15,8 @@ namespace TooExe.Owl.Library.Model
 
         public int IdPlayList { get; set; }
         public int IdTranslation { get; set; }
+
+        [ForeignKey("IdPlayList")]
+        public virtual PlayList PlayList { get; set; }
     }
 }

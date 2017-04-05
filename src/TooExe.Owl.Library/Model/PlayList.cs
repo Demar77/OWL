@@ -10,6 +10,11 @@ namespace TooExe.Owl.Library.Model
     [Table("PlayLists", Schema = "Owl")]
     public class PlayList
     {
+        public PlayList()
+        {
+            PlayListDetails = new HashSet<PlayListDetail>();
+        }
+
         [Key]
         public int Id { get; set; }
 
@@ -19,5 +24,7 @@ namespace TooExe.Owl.Library.Model
 
         [ForeignKey("IdDocument")]
         public virtual Article Article { get; set; }
+
+        public virtual ICollection<PlayListDetail> PlayListDetails { get; set; }
     }
 }
