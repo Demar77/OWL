@@ -13,10 +13,14 @@ namespace TooExe.Owl.Library.Model
         [Key]
         public int Id { get; set; }
 
+        [ForeignKey("IdTranslation")]
         public int IdTranslation { get; set; }
+
         public int IdArticle { get; set; }
 
         [ForeignKey("IdArticle")]
         public virtual Article Article { get; set; }
+
+        public virtual Translation Translation { get; set; }
     }
 }
