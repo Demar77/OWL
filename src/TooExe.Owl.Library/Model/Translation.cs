@@ -10,10 +10,16 @@ namespace TooExe.Owl.Library.Model
     [Table("Translations", Schema = "Owl")]
     public class Translation
     {
+        public Translation()
+        {
+            PlayListDetails = new HashSet<PlayListDetail>();
+        }
+
         [Key]
         public int Id { get; set; }
 
         public int IdEnglishWord { get; set; }
         public int IdPolishWord { get; set; }
+        public virtual ICollection<PlayListDetail> PlayListDetails { get; set; }
     }
 }
