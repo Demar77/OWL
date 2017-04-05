@@ -17,6 +17,7 @@ namespace TooExe.Owl.Mvc.Data
     {
         DbSet<Article> Articles { get; set; }
         DbSet<ArticleDetail> ArticleDetails { get; set; }
+        DbSet<EnglishPolish> EnglishPolishes { get; set; }
         DbSet<EnglishWord> EnglishWords { get; set; }
         DbSet<KnownWord> KnownWords { get; set; }
         DbSet<PlayList> PlayLists { get; set; }

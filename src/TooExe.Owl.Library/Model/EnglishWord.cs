@@ -13,6 +13,7 @@ namespace TooExe.Owl.Library.Model
         public EnglishWord()
         {
             Translations = new HashSet<Translation>();
+            EnglishPolishes = new HashSet<EnglishPolish>();
         }
 
         [Key]
@@ -21,5 +22,6 @@ namespace TooExe.Owl.Library.Model
         public string Word { get; set; }
         public string FileName { get; set; }
         public virtual ICollection<Translation> Translations { get; set; }
+        public virtual ICollection<EnglishPolish> EnglishPolishes { get; set; }
     }
 }

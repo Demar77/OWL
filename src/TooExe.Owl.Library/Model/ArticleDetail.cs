@@ -13,7 +13,6 @@ namespace TooExe.Owl.Library.Model
         [Key]
         public int Id { get; set; }
 
-        [ForeignKey("IdTranslation")]
         public int IdTranslation { get; set; }
 
         public int IdArticle { get; set; }
@@ -21,6 +20,7 @@ namespace TooExe.Owl.Library.Model
         [ForeignKey("IdArticle")]
         public virtual Article Article { get; set; }
 
+        [ForeignKey("IdTranslation")]
         public virtual Translation Translation { get; set; }
     }
 }
