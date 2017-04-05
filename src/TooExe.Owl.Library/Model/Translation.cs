@@ -21,5 +21,11 @@ namespace TooExe.Owl.Library.Model
         public int IdEnglishWord { get; set; }
         public int IdPolishWord { get; set; }
         public virtual ICollection<PlayListDetail> PlayListDetails { get; set; }
+
+        [ForeignKey("IdPolishWord")]
+        public virtual PolishWord PolishWord { get; set; }
+
+        [ForeignKey("IdEnglishWord")]
+        public virtual EnglishWord EnglishWord { get; set; }
     }
 }
