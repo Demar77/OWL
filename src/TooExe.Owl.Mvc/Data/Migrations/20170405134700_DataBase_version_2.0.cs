@@ -331,7 +331,6 @@ namespace TooExe.Owl.Mvc.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     IdArticle = table.Column<int>(nullable: false),
-                    IdEnglishWord = table.Column<int>(nullable: true),
                     IdTranslation = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -344,13 +343,6 @@ namespace TooExe.Owl.Mvc.Migrations
                         principalTable: "Articles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ArticleDetails_Translations_IdEnglishWord",
-                        column: x => x.IdEnglishWord,
-                        principalSchema: "Owl",
-                        principalTable: "Translations",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_ArticleDetails_Translations_IdTranslation",
                         column: x => x.IdTranslation,
@@ -426,12 +418,6 @@ namespace TooExe.Owl.Mvc.Migrations
                 schema: "Owl",
                 table: "ArticleDetails",
                 column: "IdArticle");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ArticleDetails_IdEnglishWord",
-                schema: "Owl",
-                table: "ArticleDetails",
-                column: "IdEnglishWord");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ArticleDetails_IdTranslation",

@@ -148,15 +148,11 @@ namespace TooExe.Owl.Mvc.Data.Migrations
 
                     b.Property<int>("IdArticle");
 
-                    b.Property<int?>("IdEnglishWord");
-
                     b.Property<int>("IdTranslation");
 
                     b.HasKey("Id");
 
                     b.HasIndex("IdArticle");
-
-                    b.HasIndex("IdEnglishWord");
 
                     b.HasIndex("IdTranslation");
 
@@ -397,12 +393,8 @@ namespace TooExe.Owl.Mvc.Data.Migrations
                         .HasForeignKey("IdArticle")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("TooExe.Owl.Library.Model.Translation")
-                        .WithMany("ArticleDetails")
-                        .HasForeignKey("IdEnglishWord");
-
                     b.HasOne("TooExe.Owl.Library.Model.Translation", "Translation")
-                        .WithMany()
+                        .WithMany("ArticleDetails")
                         .HasForeignKey("IdTranslation")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

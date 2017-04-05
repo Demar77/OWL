@@ -8,7 +8,7 @@ using TooExe.Owl.Mvc.Data;
 namespace TooExe.Owl.Mvc.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170405133249_DataBase_version_2.0")]
+    [Migration("20170405134700_DataBase_version_2.0")]
     partial class DataBase_version_20
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -149,15 +149,11 @@ namespace TooExe.Owl.Mvc.Migrations
 
                     b.Property<int>("IdArticle");
 
-                    b.Property<int?>("IdEnglishWord");
-
                     b.Property<int>("IdTranslation");
 
                     b.HasKey("Id");
 
                     b.HasIndex("IdArticle");
-
-                    b.HasIndex("IdEnglishWord");
 
                     b.HasIndex("IdTranslation");
 
@@ -398,12 +394,8 @@ namespace TooExe.Owl.Mvc.Migrations
                         .HasForeignKey("IdArticle")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("TooExe.Owl.Library.Model.Translation")
-                        .WithMany("ArticleDetails")
-                        .HasForeignKey("IdEnglishWord");
-
                     b.HasOne("TooExe.Owl.Library.Model.Translation", "Translation")
-                        .WithMany()
+                        .WithMany("ArticleDetails")
                         .HasForeignKey("IdTranslation")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
