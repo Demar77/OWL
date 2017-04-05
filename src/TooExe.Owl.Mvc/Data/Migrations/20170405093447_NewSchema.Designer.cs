@@ -5,12 +5,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using TooExe.Owl.Mvc.Data;
 
-namespace TooExe.Owl.Mvc.Data.Migrations
+namespace TooExe.Owl.Mvc.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170405093447_NewSchema")]
+    partial class NewSchema
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.0-rtm-22752")
@@ -130,13 +131,11 @@ namespace TooExe.Owl.Mvc.Data.Migrations
 
                     b.Property<string>("FileName");
 
-                    b.Property<int>("IdOwlUser");
+                    b.Property<int>("IdProfile");
 
                     b.Property<string>("Name");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("IdOwlUser");
 
                     b.ToTable("Articles","Owl");
                 });
@@ -341,14 +340,6 @@ namespace TooExe.Owl.Mvc.Data.Migrations
                     b.HasOne("TooExe.Owl.Mvc.Models.ApplicationUser")
                         .WithMany("Roles")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("TooExe.Owl.Library.Model.Article", b =>
-                {
-                    b.HasOne("TooExe.Owl.Library.Model.OwlUser", "OwlUser")
-                        .WithMany("Articles")
-                        .HasForeignKey("IdOwlUser")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
         }
