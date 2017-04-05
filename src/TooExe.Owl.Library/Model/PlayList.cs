@@ -16,5 +16,8 @@ namespace TooExe.Owl.Library.Model
         public int IdDocument { get; set; }
         public string Name { get; set; }
         public string FileName { get; set; }
+
+        [ForeignKey("IdDocument")]
+        public virtual Article Article { get; set; }
     }
 }
