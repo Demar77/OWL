@@ -14,6 +14,7 @@ namespace TooExe.Owl.Library.Model
         public Article()
         {
             PlayLists = new HashSet<PlayList>();
+            ArticleDetails = new HashSet<ArticleDetail>();
         }
 
         [Key]
@@ -28,5 +29,6 @@ namespace TooExe.Owl.Library.Model
         public virtual OwlUser OwlUser { get; set; }
 
         public virtual ICollection<PlayList> PlayLists { get; set; }
+        public virtual ICollection<ArticleDetail> ArticleDetails { get; set; }
     }
 }
