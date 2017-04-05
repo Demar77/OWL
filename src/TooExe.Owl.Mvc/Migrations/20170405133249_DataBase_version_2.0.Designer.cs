@@ -8,8 +8,8 @@ using TooExe.Owl.Mvc.Data;
 namespace TooExe.Owl.Mvc.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170405100006_OwlUser_Article")]
-    partial class OwlUser_Article
+    [Migration("20170405133249_DataBase_version_2.0")]
+    partial class DataBase_version_20
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -149,11 +149,37 @@ namespace TooExe.Owl.Mvc.Migrations
 
                     b.Property<int>("IdArticle");
 
+                    b.Property<int?>("IdEnglishWord");
+
                     b.Property<int>("IdTranslation");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("IdArticle");
+
+                    b.HasIndex("IdEnglishWord");
+
+                    b.HasIndex("IdTranslation");
+
                     b.ToTable("ArticleDetails","Owl");
+                });
+
+            modelBuilder.Entity("TooExe.Owl.Library.Model.EnglishPolish", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("IPolishWord");
+
+                    b.Property<int>("IdEnglishWord");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IPolishWord");
+
+                    b.HasIndex("IdEnglishWord");
+
+                    b.ToTable("EnglishPolish","Owl");
                 });
 
             modelBuilder.Entity("TooExe.Owl.Library.Model.EnglishWord", b =>
@@ -174,8 +200,6 @@ namespace TooExe.Owl.Mvc.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<int>("IdProfile");
 
                     b.Property<int>("IdTranslation");
 
@@ -211,6 +235,8 @@ namespace TooExe.Owl.Mvc.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("IdDocument");
+
                     b.ToTable("PlayLists","Owl");
                 });
 
@@ -224,6 +250,10 @@ namespace TooExe.Owl.Mvc.Migrations
                     b.Property<int>("IdTranslation");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("IdPlayList");
+
+                    b.HasIndex("IdTranslation");
 
                     b.ToTable("PlayListDetails","Owl");
                 });
@@ -251,9 +281,17 @@ namespace TooExe.Owl.Mvc.Migrations
 
                     b.Property<int>("IdEnglishWord");
 
+                    b.Property<int>("IdKnownWord");
+
                     b.Property<int>("IdPolishWord");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("IdEnglishWord");
+
+                    b.HasIndex("IdKnownWord");
+
+                    b.HasIndex("IdPolishWord");
 
                     b.ToTable("Translations","Owl");
                 });
@@ -350,6 +388,75 @@ namespace TooExe.Owl.Mvc.Migrations
                     b.HasOne("TooExe.Owl.Library.Model.OwlUser", "OwlUser")
                         .WithMany("Articles")
                         .HasForeignKey("IdOwlUser")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("TooExe.Owl.Library.Model.ArticleDetail", b =>
+                {
+                    b.HasOne("TooExe.Owl.Library.Model.Article", "Article")
+                        .WithMany("ArticleDetails")
+                        .HasForeignKey("IdArticle")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("TooExe.Owl.Library.Model.Translation")
+                        .WithMany("ArticleDetails")
+                        .HasForeignKey("IdEnglishWord");
+
+                    b.HasOne("TooExe.Owl.Library.Model.Translation", "Translation")
+                        .WithMany()
+                        .HasForeignKey("IdTranslation")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("TooExe.Owl.Library.Model.EnglishPolish", b =>
+                {
+                    b.HasOne("TooExe.Owl.Library.Model.PolishWord", "PolishWord")
+                        .WithMany("EnglishPolishes")
+                        .HasForeignKey("IPolishWord")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("TooExe.Owl.Library.Model.EnglishWord", "EnglishWord")
+                        .WithMany("EnglishPolishes")
+                        .HasForeignKey("IdEnglishWord")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("TooExe.Owl.Library.Model.PlayList", b =>
+                {
+                    b.HasOne("TooExe.Owl.Library.Model.Article", "Article")
+                        .WithMany("PlayLists")
+                        .HasForeignKey("IdDocument")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("TooExe.Owl.Library.Model.PlayListDetail", b =>
+                {
+                    b.HasOne("TooExe.Owl.Library.Model.PlayList", "PlayList")
+                        .WithMany("PlayListDetails")
+                        .HasForeignKey("IdPlayList")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("TooExe.Owl.Library.Model.Translation", "Translation")
+                        .WithMany("PlayListDetails")
+                        .HasForeignKey("IdTranslation")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("TooExe.Owl.Library.Model.Translation", b =>
+                {
+                    b.HasOne("TooExe.Owl.Library.Model.EnglishWord", "EnglishWord")
+                        .WithMany("Translations")
+                        .HasForeignKey("IdEnglishWord")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("TooExe.Owl.Library.Model.KnownWord", "KnownWord")
+                        .WithMany("Translations")
+                        .HasForeignKey("IdKnownWord")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("TooExe.Owl.Library.Model.PolishWord", "PolishWord")
+                        .WithMany("Translations")
+                        .HasForeignKey("IdPolishWord")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
         }

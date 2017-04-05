@@ -10,11 +10,16 @@ namespace TooExe.Owl.Library.Model
     [Table("KnownWords", Schema = "Owl")]
     public class KnownWord
     {
+        public KnownWord()
+        {
+            Translations = new HashSet<Translation>();
+        }
+
         [Key]
         public int Id { get; set; }
 
-        public int IdProfile { get; set; }
-
         public int IdTranslation { get; set; }
+
+        public virtual ICollection<Translation> Translations { get; set; }
     }
 }

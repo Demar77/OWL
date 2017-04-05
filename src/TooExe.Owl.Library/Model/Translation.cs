@@ -19,6 +19,7 @@ namespace TooExe.Owl.Library.Model
         [Key]
         public int Id { get; set; }
 
+        public int IdKnownWord { get; set; }
         public int IdEnglishWord { get; set; }
         public int IdPolishWord { get; set; }
         public virtual ICollection<PlayListDetail> PlayListDetails { get; set; }
@@ -31,5 +32,8 @@ namespace TooExe.Owl.Library.Model
 
         [ForeignKey("IdEnglishWord")]
         public virtual ICollection<ArticleDetail> ArticleDetails { get; set; }
+
+        [ForeignKey("IdKnownWord")]
+        public virtual KnownWord KnownWord { get; set; }
     }
 }

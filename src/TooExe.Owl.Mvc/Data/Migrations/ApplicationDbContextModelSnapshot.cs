@@ -200,8 +200,6 @@ namespace TooExe.Owl.Mvc.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("IdProfile");
-
                     b.Property<int>("IdTranslation");
 
                     b.HasKey("Id");
@@ -282,11 +280,15 @@ namespace TooExe.Owl.Mvc.Data.Migrations
 
                     b.Property<int>("IdEnglishWord");
 
+                    b.Property<int>("IdKnownWord");
+
                     b.Property<int>("IdPolishWord");
 
                     b.HasKey("Id");
 
                     b.HasIndex("IdEnglishWord");
+
+                    b.HasIndex("IdKnownWord");
 
                     b.HasIndex("IdPolishWord");
 
@@ -444,6 +446,11 @@ namespace TooExe.Owl.Mvc.Data.Migrations
                     b.HasOne("TooExe.Owl.Library.Model.EnglishWord", "EnglishWord")
                         .WithMany("Translations")
                         .HasForeignKey("IdEnglishWord")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("TooExe.Owl.Library.Model.KnownWord", "KnownWord")
+                        .WithMany("Translations")
+                        .HasForeignKey("IdKnownWord")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("TooExe.Owl.Library.Model.PolishWord", "PolishWord")
