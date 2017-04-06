@@ -20,8 +20,8 @@ namespace TooExe.Owl.Library.Model
 
         public int IdTranslation { get; set; }
         public int IdOwlUser  { get; set; }
-        // [ForeignKey("IdOwlUser")]
-        //  public virtual OwlUser OwlUser { get; set; }
+        [ForeignKey("IdOwlUser")]
+        public virtual OwlUser OwlUser { get; set; }
         [ForeignKey("IdTranslation")]
         public virtual Translation Translation { get; set; }
     }

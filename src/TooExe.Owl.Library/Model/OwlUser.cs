@@ -13,7 +13,7 @@ namespace TooExe.Owl.Library.Model
         public OwlUser()
         {
             Articles = new HashSet<Article>();
-         //   KnownWords= new List<KnownWord>();
+            KnownWords= new List<KnownWord>();
         }
 
         [Key]
@@ -22,6 +22,6 @@ namespace TooExe.Owl.Library.Model
         public string ExternalIdUser { get; set; }
         public string Name { get; set; }
         public virtual ICollection<Article> Articles { get; set; }
-       // public virtual ICollection<KnownWord> KnownWords { get; set; }
+        public virtual ICollection<KnownWord> KnownWords { get; set; }
     }
 }
