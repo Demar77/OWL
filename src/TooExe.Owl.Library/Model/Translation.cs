@@ -14,12 +14,13 @@ namespace TooExe.Owl.Library.Model
         {
             PlayListDetails = new HashSet<PlayListDetail>();
             ArticleDetails = new HashSet<ArticleDetail>();
+            KnownWords= new HashSet<KnownWord>();
         }
 
         [Key]
         public int Id { get; set; }
 
-        public int IdKnownWord { get; set; }
+       
         public int IdEnglishWord { get; set; }
         public int IdPolishWord { get; set; }
         public virtual ICollection<PlayListDetail> PlayListDetails { get; set; }
@@ -31,8 +32,7 @@ namespace TooExe.Owl.Library.Model
         public virtual EnglishWord EnglishWord { get; set; }
 
         public virtual ICollection<ArticleDetail> ArticleDetails { get; set; }
-
-        [ForeignKey("IdKnownWord")]
-        public virtual KnownWord KnownWord { get; set; }
+        public virtual ICollection<KnownWord> KnownWords { get; set; }
+        
     }
 }

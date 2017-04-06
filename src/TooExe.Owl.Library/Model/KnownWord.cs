@@ -12,14 +12,17 @@ namespace TooExe.Owl.Library.Model
     {
         public KnownWord()
         {
-            Translations = new HashSet<Translation>();
+            
         }
 
         [Key]
         public int Id { get; set; }
 
         public int IdTranslation { get; set; }
-
-        public virtual ICollection<Translation> Translations { get; set; }
+        public int IdOwlUser  { get; set; }
+        // [ForeignKey("IdOwlUser")]
+        //  public virtual OwlUser OwlUser { get; set; }
+        [ForeignKey("IdTranslation")]
+        public virtual Translation Translation { get; set; }
     }
 }
