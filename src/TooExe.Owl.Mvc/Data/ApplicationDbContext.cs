@@ -33,6 +33,6 @@ namespace TooExe.Owl.Mvc.Data
         public DbSet<PolishWord> PolishWords { get; set; }
         public DbSet<Translation> Translations { get; set; }
         public DbSet<OwlUser> OwlUser { get; set; }
-        public DbSet<EnglishPolish> EnglishPolishes { get; set; }
+        
     }
 }

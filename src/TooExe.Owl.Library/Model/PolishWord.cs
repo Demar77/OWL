@@ -13,16 +13,16 @@ namespace TooExe.Owl.Library.Model
         public PolishWord()
         {
             Translations = new HashSet<Translation>();
-            EnglishPolishes = new HashSet<EnglishPolish>();
+           
         }
 
         [Key]
         public int Id { get; set; }
 
-        public int IdEnglishWord { get; set; }
+       
         public string Translate { get; set; }
         public string FileName { get; set; }
         public virtual ICollection<Translation> Translations { get; set; }
-        public virtual ICollection<EnglishPolish> EnglishPolishes { get; set; }
+      
     }
 }
