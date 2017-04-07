@@ -4,5 +4,6 @@
     <ActiveDebugProfile>IIS Express</ActiveDebugProfile>
     <AutoRefresh>false</AutoRefresh>
     <ShowAllFiles>false</ShowAllFiles>
+    <NameOfLastUsedPublishProfile>owl.sport.hostingasp.pl - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
