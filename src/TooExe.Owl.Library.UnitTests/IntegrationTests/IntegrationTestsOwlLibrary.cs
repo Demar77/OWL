@@ -124,6 +124,7 @@ namespace TooExe.Owl.Library.UnitTests.IntegrationTests
             // Assert that the expected results have occurred.
             Assert.Equal(expected, actual.Count);
         }
+
         [Fact]
         public void CanGetIrregularNounFormsFromFile_ThrowException()
         {
@@ -203,6 +204,38 @@ namespace TooExe.Owl.Library.UnitTests.IntegrationTests
             // Act on the object or method under test.
 
             // Assert that the expected results have occurred.
+        }
+
+        [Fact]
+        public void GetTextFromFile_ReturnListGrequency_80_proc()
+        {
+            // Arrange all necessary preconditions and inputs.
+            var rootPath = System.AppContext.BaseDirectory;
+            string inputPath = rootPath + @"/TestFiles/SmallPartOfBookToTest.txt";
+            var listFrequency = new List<FrequencyWordsList>();
+
+            // Act on the object or method under test.
+            var text = new ReadWordsFromFile().GetStringFromFile(inputPath);
+            var listWord = text.ToWordList() as List<string>;
+            var preparingWords = new PreparingWords(listWord, listFrequency);
+            preparingWords.CalculateFreguency();
+            var actual = new PreparingWords(listFrequency).GetFrequencyWordsListsByLevelFrequencyWords(80);
+            var expected = new List<FrequencyWordsList>
+            {
+                 new FrequencyWordsList {Word = "finish", Frequency = 2},
+                  new FrequencyWordsList {Word = "is", Frequency = 2},
+                new FrequencyWordsList {Word = "my", Frequency = 2},
+                new FrequencyWordsList {Word = "this", Frequency = 2},
+               new FrequencyWordsList {Word = "first", Frequency = 1},
+            };
+
+            // Assert that the expected results have occurred.
+            Assert.Equal(expected.Count, actual.Count);
+            for (var i = 0; i < expected.Count; i++)
+            {
+                Assert.Equal(expected[i].Word, actual[i].Word);
+                Assert.Equal(expected[i].Frequency, actual[i].Frequency);
+            }
         }
     }
 }

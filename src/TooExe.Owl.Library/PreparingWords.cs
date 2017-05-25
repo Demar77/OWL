@@ -38,30 +38,28 @@ namespace TooExe.Owl.Library
 
         public List<FrequencyWordsList> GetFrequencyWordsListsByLevelFrequencyWords(double procent)
         {
+            ListFrequency = ListFrequency.OrderBy(p => p.Word).ToList();
             ListFrequency.Sort((s1, s2) => s2.Frequency.CompareTo(s1.Frequency));
             //TODO secure 101% or -5% and tolerance in decimal maybe 0.01
             //expected.Sort((s1, s2) => s2.Frequency.CompareTo(s1.Frequency));
             //var sortedList = yourList.OrderBy(x => x.Score);
             if (procent == 100)
             {
-                
                 return ListFrequency;
             }
             else
             {
-              
                 int occurrenceWords = 0;
                 foreach (var lf in ListFrequency)
                 {
                     occurrenceWords += lf.Frequency;
                 }
-                double occurrenceWordsEnough=(procent* occurrenceWords) /100;
+                double occurrenceWordsEnough = (procent * occurrenceWords) / 100;
                 var result = new List<FrequencyWordsList>();
                 double actualValueFrequency = 0;
                 foreach (var word in ListFrequency)
                 {
-                    
-                    if (actualValueFrequency<=occurrenceWordsEnough)
+                    if (actualValueFrequency <= occurrenceWordsEnough)
                     {
                         result.Add(word);
                     }
@@ -70,10 +68,8 @@ namespace TooExe.Owl.Library
                         break;
                     }
                     actualValueFrequency += word.Frequency;
-
                 }
                 return result;
-
             }
         }
     }
