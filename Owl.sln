@@ -18,6 +18,12 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TooExe.Owl.Library.UnitTest
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TooExe.Owl.Mvc.UnitTests", "src\TooExe.Owl.Mvc.UnitTests\TooExe.Owl.Mvc.UnitTests.xproj", "{9356D594-EEB0-4617-BE6F-4AD078862470}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Installers", "Installers", "{665B5109-5494-48C9-A95C-0A020F8849A1}"
+	ProjectSection(SolutionItems) = preProject
+		Installers\DotNetCore.1.0.1-VS2015Tools.Preview2.0.4.exe = Installers\DotNetCore.1.0.1-VS2015Tools.Preview2.0.4.exe
+		Installers\info.txt = Installers\info.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
